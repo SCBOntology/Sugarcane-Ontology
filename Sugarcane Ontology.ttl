@@ -1,0 +1,2838 @@
+@prefix : <http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix fn: <http://www.w3.org/2005/xpath-functions#> .
+@prefix kw: <http://franz.com/ns/keyword#> .
+@prefix nd: <http://franz.com/ns/allegrograph/5.0/geo/nd#> .
+@prefix xs: <http://www.w3.org/2001/XMLSchema#> .
+@prefix err: <http://www.w3.org/2005/xqt-errors#> .
+@prefix fti: <http://franz.com/ns/allegrograph/2.2/textindex/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ndfn: <http://franz.com/ns/allegrograph/5.0/geo/nd/fn#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix keyword: <http://franz.com/ns/keyword#> .
+@base <http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#> .
+
+<http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2> rdf:type owl:Ontology ;
+                                                                                     rdfs:comment "Sugarcane Supply Chain supporting feedstock diversification within producing nations for  the advancement of global circular bioeconomies." .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/contributor
+dcterms:contributor rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/created
+dcterms:created rdf:type owl:AnnotationProperty .
+
+
+###  http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled
+<http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#located_In_Geospatial_Region
+:located_In_Geospatial_Region rdf:type owl:ObjectProperty ;
+                              rdfs:domain :Sugarcane_Geo_Spatial_Region ,
+                                          :Sugarcane_Producer .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#has_Arable_Land_Acreage
+:has_Arable_Land_Acreage rdf:type owl:DatatypeProperty ;
+                         rdfs:domain :Arable_Land_Acreage ,
+                                     :Sugarcane_Bioeconomy ;
+                         rdfs:range xsd:decimal .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#has_Arable_Land_Acreage_Per_Capita
+:has_Arable_Land_Acreage_Per_Capita rdf:type owl:DatatypeProperty ;
+                                    rdfs:domain :Arable_Land_Acreage_Per_Capita ,
+                                                :Sugarcane_Bioeconomy ;
+                                    rdfs:range xsd:decimal ;
+                                    rdfs:comment "All values are expressed in hectare per capita (ha/cap)." .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#has_Emission_Per_Capita
+:has_Emission_Per_Capita rdf:type owl:DatatypeProperty ;
+                         rdfs:domain :Emission_Per_Capita ,
+                                     :Sugarcane_Bioeconomy ;
+                         rdfs:range xsd:decimal .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#has_Global_Innovation_Index
+:has_Global_Innovation_Index rdf:type owl:DatatypeProperty ;
+                             rdfs:domain :Global_Innovation_Index_Score ,
+                                         :Sugarcane_Bioeconomy ;
+                             rdfs:range xsd:decimal .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#has_Gross_Domestic_Product_Per_Capita
+:has_Gross_Domestic_Product_Per_Capita rdf:type owl:DatatypeProperty ;
+                                       rdfs:domain :Gross_Domestic_Product_Per_Capita_Indicator ,
+                                                   :Sugarcane_Bioeconomy ;
+                                       rdfs:range xsd:decimal .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#has_Political_Risk_Index
+:has_Political_Risk_Index rdf:type owl:DatatypeProperty ;
+                          rdfs:domain :Political_Risk_Index ,
+                                      :Sugarcane_Bioeconomy ;
+                          rdfs:range xsd:decimal .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#has_Regional_Bioeconomy_Policy_Maturity_Score
+:has_Regional_Bioeconomy_Policy_Maturity_Score rdf:type owl:DatatypeProperty ;
+                                               rdfs:domain :Regional_Bioeconomy_Policy_Maturity_Score ;
+                                               rdfs:range xsd:decimal .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#has_Sugarcane_Acreage
+:has_Sugarcane_Acreage rdf:type owl:DatatypeProperty ;
+                       rdfs:domain :Sugarcane_Acreage ,
+                                   :Sugarcane_Bioeconomy ;
+                       rdfs:range xsd:decimal .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#has_Sugarcane_Tonnage_Value
+:has_Sugarcane_Tonnage_Value rdf:type owl:DatatypeProperty ;
+                             rdfs:domain :Sugarcane_Bioeconomy ,
+                                         :Sugarcane_Producer ;
+                             rdfs:range xsd:decimal .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Advanced_Innovation
+:Advanced_Innovation rdf:type owl:Class ;
+                     owl:equivalentClass [ owl:intersectionOf ( :Global_Innovation_Index_Score
+                                                                [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty :has_Global_Innovation_Index ;
+                                                                  owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                       owl:onDatatype xsd:decimal ;
+                                                                                       owl:withRestrictions ( [ xsd:minExclusive 45.0
+                                                                                                              ]
+                                                                                                            )
+                                                                                     ]
+                                                                ]
+                                                              ) ;
+                                           rdf:type owl:Class
+                                         ] ;
+                     rdfs:subClassOf :Global_Innovation_Index_Score .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Advanced_Regional_Bioeconomy_Policy_Maturity_Score
+:Advanced_Regional_Bioeconomy_Policy_Maturity_Score rdf:type owl:Class ;
+                                                    owl:equivalentClass [ owl:intersectionOf ( :Regional_Bioeconomy_Policy_Maturity_Score
+                                                                                               [ rdf:type owl:Restriction ;
+                                                                                                 owl:onProperty :has_Regional_Bioeconomy_Policy_Maturity_Score ;
+                                                                                                 owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                                      owl:onDatatype xsd:decimal ;
+                                                                                                                      owl:withRestrictions ( [ xsd:minInclusive 4.0
+                                                                                                                                             ]
+                                                                                                                                           )
+                                                                                                                    ]
+                                                                                               ]
+                                                                                             ) ;
+                                                                          rdf:type owl:Class
+                                                                        ] ;
+                                                    rdfs:subClassOf :Regional_Bioeconomy_Policy_Maturity_Score .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Africa_Region
+:Africa_Region rdf:type owl:Class ;
+               rdfs:subClassOf :Sugarcane_Geo_Spatial_Region .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Americas_Region
+:Americas_Region rdf:type owl:Class ;
+                 rdfs:subClassOf :Sugarcane_Geo_Spatial_Region .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Arable_Land_Acreage
+:Arable_Land_Acreage rdf:type owl:Class ;
+                     rdfs:subClassOf :Sociological_Factor_Indicator .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Arable_Land_Acreage_Per_Capita
+:Arable_Land_Acreage_Per_Capita rdf:type owl:Class ;
+                                rdfs:subClassOf :Sociological_Factor_Indicator .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Asia_Region
+:Asia_Region rdf:type owl:Class ;
+             rdfs:subClassOf :Sugarcane_Geo_Spatial_Region .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Developing_Innovation
+:Developing_Innovation rdf:type owl:Class ;
+                       owl:equivalentClass [ owl:intersectionOf ( :Global_Innovation_Index_Score
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty :has_Global_Innovation_Index ;
+                                                                    owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                         owl:onDatatype xsd:decimal ;
+                                                                                         owl:withRestrictions ( [ xsd:minExclusive 25.0
+                                                                                                                ]
+                                                                                                              )
+                                                                                       ]
+                                                                  ]
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty :has_Global_Innovation_Index ;
+                                                                    owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                         owl:onDatatype xsd:decimal ;
+                                                                                         owl:withRestrictions ( [ xsd:maxInclusive 35.0
+                                                                                                                ]
+                                                                                                              )
+                                                                                       ]
+                                                                  ]
+                                                                ) ;
+                                             rdf:type owl:Class
+                                           ] ;
+                       rdfs:subClassOf :Global_Innovation_Index_Score .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Developing_Regional_Bioeconomy_Policy_Maturity_Score
+:Developing_Regional_Bioeconomy_Policy_Maturity_Score rdf:type owl:Class ;
+                                                      owl:equivalentClass [ owl:intersectionOf ( :Regional_Bioeconomy_Policy_Maturity_Score
+                                                                                                 [ rdf:type owl:Restriction ;
+                                                                                                   owl:onProperty :has_Regional_Bioeconomy_Policy_Maturity_Score ;
+                                                                                                   owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                                        owl:onDatatype xsd:decimal ;
+                                                                                                                        owl:withRestrictions ( [ xsd:minInclusive 3.0
+                                                                                                                                               ]
+                                                                                                                                               [ xsd:maxExclusive 4.0
+                                                                                                                                               ]
+                                                                                                                                             )
+                                                                                                                      ]
+                                                                                                 ]
+                                                                                               ) ;
+                                                                            rdf:type owl:Class
+                                                                          ] ;
+                                                      rdfs:subClassOf :Regional_Bioeconomy_Policy_Maturity_Score .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Economic_Factor_Indicator
+:Economic_Factor_Indicator rdf:type owl:Class ;
+                           rdfs:subClassOf :Pestle_Factor_Indicator .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Emerging_Regional_Bioeconomy_Policy_Maturity_Score
+:Emerging_Regional_Bioeconomy_Policy_Maturity_Score rdf:type owl:Class ;
+                                                    owl:equivalentClass [ owl:intersectionOf ( :Regional_Bioeconomy_Policy_Maturity_Score
+                                                                                               [ rdf:type owl:Restriction ;
+                                                                                                 owl:onProperty :has_Regional_Bioeconomy_Policy_Maturity_Score ;
+                                                                                                 owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                                      owl:onDatatype xsd:decimal ;
+                                                                                                                      owl:withRestrictions ( [ xsd:minInclusive 2.0
+                                                                                                                                             ]
+                                                                                                                                             [ xsd:maxExclusive 3.0
+                                                                                                                                             ]
+                                                                                                                                           )
+                                                                                                                    ]
+                                                                                               ]
+                                                                                             ) ;
+                                                                          rdf:type owl:Class
+                                                                        ] ;
+                                                    rdfs:subClassOf :Regional_Bioeconomy_Policy_Maturity_Score .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Emission_Per_Capita
+:Emission_Per_Capita rdf:type owl:Class ;
+                     rdfs:subClassOf :Environmental_Factor_Indicator .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Environmental_Factor_Indicator
+:Environmental_Factor_Indicator rdf:type owl:Class ;
+                                rdfs:subClassOf :Pestle_Factor_Indicator .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Global_Innovation_Index_Score
+:Global_Innovation_Index_Score rdf:type owl:Class ;
+                               rdfs:subClassOf :Technological_Factor_Indicator .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Global_Sugarcane_Feedstock_Supply_Chain
+:Global_Sugarcane_Feedstock_Supply_Chain rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Gross_Domestic_Product_Per_Capita_Indicator
+:Gross_Domestic_Product_Per_Capita_Indicator rdf:type owl:Class ;
+                                             rdfs:subClassOf :Economic_Factor_Indicator .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#High_Arable_Land_Mass
+:High_Arable_Land_Mass rdf:type owl:Class ;
+                       owl:equivalentClass [ owl:intersectionOf ( :Arable_Land_Acreage
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty :has_Arable_Land_Acreage ;
+                                                                    owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                         owl:onDatatype xsd:decimal ;
+                                                                                         owl:withRestrictions ( [ xsd:minExclusive 20.0
+                                                                                                                ]
+                                                                                                              )
+                                                                                       ]
+                                                                  ]
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty :has_Arable_Land_Acreage ;
+                                                                    owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                         owl:onDatatype xsd:decimal ;
+                                                                                         owl:withRestrictions ( [ xsd:maxInclusive 60.0
+                                                                                                                ]
+                                                                                                              )
+                                                                                       ]
+                                                                  ]
+                                                                ) ;
+                                             rdf:type owl:Class
+                                           ] ;
+                       rdfs:subClassOf :Arable_Land_Acreage .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#High_Economic_Threshold
+:High_Economic_Threshold rdf:type owl:Class ;
+                         owl:equivalentClass [ owl:intersectionOf ( :Gross_Domestic_Product_Per_Capita_Indicator
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty :has_Gross_Domestic_Product_Per_Capita ;
+                                                                      owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                           owl:onDatatype xsd:decimal ;
+                                                                                           owl:withRestrictions ( [ xsd:minExclusive 20000.0
+                                                                                                                  ]
+                                                                                                                )
+                                                                                         ]
+                                                                    ]
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty :has_Gross_Domestic_Product_Per_Capita ;
+                                                                      owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                           owl:onDatatype xsd:decimal ;
+                                                                                           owl:withRestrictions ( [ xsd:maxInclusive 40000.0
+                                                                                                                  ]
+                                                                                                                )
+                                                                                         ]
+                                                                    ]
+                                                                  ) ;
+                                               rdf:type owl:Class
+                                             ] ;
+                         rdfs:subClassOf :Gross_Domestic_Product_Per_Capita_Indicator .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#High_Emission_Per_Capita
+:High_Emission_Per_Capita rdf:type owl:Class ;
+                          owl:equivalentClass [ owl:intersectionOf ( :Emission_Per_Capita
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty :has_Emission_Per_Capita ;
+                                                                       owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                            owl:onDatatype xsd:decimal ;
+                                                                                            owl:withRestrictions ( [ xsd:minInclusive 5.01
+                                                                                                                   ]
+                                                                                                                 )
+                                                                                          ]
+                                                                     ]
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty :has_Emission_Per_Capita ;
+                                                                       owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                            owl:onDatatype xsd:decimal ;
+                                                                                            owl:withRestrictions ( [ xsd:maxInclusive 10.00
+                                                                                                                   ]
+                                                                                                                 )
+                                                                                          ]
+                                                                     ]
+                                                                   ) ;
+                                                rdf:type owl:Class
+                                              ] ;
+                          rdfs:subClassOf :Emission_Per_Capita .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#High_Innovation
+:High_Innovation rdf:type owl:Class ;
+                 owl:equivalentClass [ owl:intersectionOf ( :Global_Innovation_Index_Score
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty :has_Global_Innovation_Index ;
+                                                              owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                   owl:onDatatype xsd:decimal ;
+                                                                                   owl:withRestrictions ( [ xsd:minExclusive 35.0
+                                                                                                          ]
+                                                                                                        )
+                                                                                 ]
+                                                            ]
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty :has_Global_Innovation_Index ;
+                                                              owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                   owl:onDatatype xsd:decimal ;
+                                                                                   owl:withRestrictions ( [ xsd:maxInclusive 45.0
+                                                                                                          ]
+                                                                                                        )
+                                                                                 ]
+                                                            ]
+                                                          ) ;
+                                       rdf:type owl:Class
+                                     ] ;
+                 rdfs:subClassOf :Global_Innovation_Index_Score .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#High_Land_Availability
+:High_Land_Availability rdf:type owl:Class ;
+                        owl:equivalentClass [ owl:intersectionOf ( :Arable_Land_Acreage_Per_Capita
+                                                                   [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty :has_Arable_Land_Acreage_Per_Capita ;
+                                                                     owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                          owl:onDatatype xsd:decimal ;
+                                                                                          owl:withRestrictions ( [ xsd:minExclusive 0.30
+                                                                                                                 ]
+                                                                                                               )
+                                                                                        ]
+                                                                   ]
+                                                                   [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty :has_Arable_Land_Acreage_Per_Capita ;
+                                                                     owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                          owl:onDatatype xsd:decimal ;
+                                                                                          owl:withRestrictions ( [ xsd:maxInclusive 0.60
+                                                                                                                 ]
+                                                                                                               )
+                                                                                        ]
+                                                                   ]
+                                                                 ) ;
+                                              rdf:type owl:Class
+                                            ] ;
+                        rdfs:subClassOf :Arable_Land_Acreage_Per_Capita .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#High_Political_Risk_Index
+:High_Political_Risk_Index rdf:type owl:Class ;
+                           owl:equivalentClass [ owl:intersectionOf ( :Political_Risk_Index
+                                                                      [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty :has_Political_Risk_Index ;
+                                                                        owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                             owl:onDatatype xsd:decimal ;
+                                                                                             owl:withRestrictions ( [ xsd:minExclusive 45.0
+                                                                                                                    ]
+                                                                                                                  )
+                                                                                           ]
+                                                                      ]
+                                                                      [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty :has_Political_Risk_Index ;
+                                                                        owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                             owl:onDatatype xsd:decimal ;
+                                                                                             owl:withRestrictions ( [ xsd:maxInclusive 60.0
+                                                                                                                    ]
+                                                                                                                  )
+                                                                                           ]
+                                                                      ]
+                                                                    ) ;
+                                                 rdf:type owl:Class
+                                               ] ;
+                           rdfs:subClassOf :Political_Risk_Index .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#High_Potential_Value_Sugarcane_Bioeconomy
+:High_Potential_Value_Sugarcane_Bioeconomy rdf:type owl:Class ;
+                                           owl:equivalentClass [ owl:intersectionOf ( :Sugarcane_Bioeconomy
+                                                                                      [ rdf:type owl:Class ;
+                                                                                        owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                                                                        owl:onProperty :has_Arable_Land_Acreage_Per_Capita ;
+                                                                                                        owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                                             owl:onDatatype xsd:decimal ;
+                                                                                                                             owl:withRestrictions ( [ xsd:minExclusive 0.30
+                                                                                                                                                    ]
+                                                                                                                                                  )
+                                                                                                                           ]
+                                                                                                      ]
+                                                                                                      [ rdf:type owl:Restriction ;
+                                                                                                        owl:onProperty :has_Sugarcane_Acreage ;
+                                                                                                        owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                                             owl:onDatatype xsd:decimal ;
+                                                                                                                             owl:withRestrictions ( [ xsd:minExclusive 0.50
+                                                                                                                                                    ]
+                                                                                                                                                  )
+                                                                                                                           ]
+                                                                                                      ]
+                                                                                                    )
+                                                                                      ]
+                                                                                      [ rdf:type owl:Restriction ;
+                                                                                        owl:onProperty :has_Emission_Per_Capita ;
+                                                                                        owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                             owl:onDatatype xsd:decimal ;
+                                                                                                             owl:withRestrictions ( [ xsd:maxInclusive 1.00
+                                                                                                                                    ]
+                                                                                                                                  )
+                                                                                                           ]
+                                                                                      ]
+                                                                                      [ rdf:type owl:Restriction ;
+                                                                                        owl:onProperty :has_Sugarcane_Tonnage_Value ;
+                                                                                        owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                             owl:onDatatype xsd:decimal ;
+                                                                                                             owl:withRestrictions ( [ xsd:maxInclusive 8.0
+                                                                                                                                    ]
+                                                                                                                                  )
+                                                                                                           ]
+                                                                                      ]
+                                                                                    ) ;
+                                                                 rdf:type owl:Class
+                                                               ] ;
+                                           rdfs:subClassOf :Sugarcane_Bioeconomy .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#High_Value_Sugarcane_Bioeconomy
+:High_Value_Sugarcane_Bioeconomy rdf:type owl:Class ;
+                                 owl:equivalentClass [ owl:intersectionOf ( :Sugarcane_Bioeconomy
+                                                                            [ rdf:type owl:Class ;
+                                                                              owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                                                              owl:onProperty :has_Arable_Land_Acreage_Per_Capita ;
+                                                                                              owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                                   owl:onDatatype xsd:decimal ;
+                                                                                                                   owl:withRestrictions ( [ xsd:minExclusive 0.15
+                                                                                                                                          ]
+                                                                                                                                        )
+                                                                                                                 ]
+                                                                                            ]
+                                                                                            [ rdf:type owl:Restriction ;
+                                                                                              owl:onProperty :has_Sugarcane_Acreage ;
+                                                                                              owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                                   owl:onDatatype xsd:decimal ;
+                                                                                                                   owl:withRestrictions ( [ xsd:minExclusive 0.15
+                                                                                                                                          ]
+                                                                                                                                        )
+                                                                                                                 ]
+                                                                                            ]
+                                                                                          )
+                                                                            ]
+                                                                            [ rdf:type owl:Class ;
+                                                                              owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                                                              owl:onProperty :has_Global_Innovation_Index ;
+                                                                                              owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                                   owl:onDatatype xsd:decimal ;
+                                                                                                                   owl:withRestrictions ( [ xsd:minInclusive 30.0
+                                                                                                                                          ]
+                                                                                                                                        )
+                                                                                                                 ]
+                                                                                            ]
+                                                                                            [ rdf:type owl:Restriction ;
+                                                                                              owl:onProperty :has_Political_Risk_Index ;
+                                                                                              owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                                   owl:onDatatype xsd:decimal ;
+                                                                                                                   owl:withRestrictions ( [ xsd:minInclusive 60.0
+                                                                                                                                          ]
+                                                                                                                                        )
+                                                                                                                 ]
+                                                                                            ]
+                                                                                          )
+                                                                            ]
+                                                                            [ rdf:type owl:Restriction ;
+                                                                              owl:onProperty :has_Gross_Domestic_Product_Per_Capita ;
+                                                                              owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                   owl:onDatatype xsd:decimal ;
+                                                                                                   owl:withRestrictions ( [ xsd:minInclusive 1000.0
+                                                                                                                          ]
+                                                                                                                        )
+                                                                                                 ]
+                                                                            ]
+                                                                            [ rdf:type owl:Restriction ;
+                                                                              owl:onProperty :has_Sugarcane_Tonnage_Value ;
+                                                                              owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                   owl:onDatatype xsd:decimal ;
+                                                                                                   owl:withRestrictions ( [ xsd:minExclusive 8.0
+                                                                                                                          ]
+                                                                                                                        )
+                                                                                                 ]
+                                                                            ]
+                                                                          ) ;
+                                                       rdf:type owl:Class
+                                                     ] ;
+                                 rdfs:subClassOf :Sugarcane_Bioeconomy .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Large_Sugarcane_Acreage
+:Large_Sugarcane_Acreage rdf:type owl:Class ;
+                         owl:equivalentClass [ owl:intersectionOf ( :Sugarcane_Acreage
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty :has_Sugarcane_Acreage ;
+                                                                      owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                           owl:onDatatype xsd:decimal ;
+                                                                                           owl:withRestrictions ( [ xsd:minExclusive 0.5
+                                                                                                                  ]
+                                                                                                                )
+                                                                                         ]
+                                                                    ]
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty :has_Sugarcane_Acreage ;
+                                                                      owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                           owl:onDatatype xsd:decimal ;
+                                                                                           owl:withRestrictions ( [ xsd:maxInclusive 1.00
+                                                                                                                  ]
+                                                                                                                )
+                                                                                         ]
+                                                                    ]
+                                                                  ) ;
+                                               rdf:type owl:Class
+                                             ] ;
+                         rdfs:subClassOf :Sugarcane_Acreage .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Legal_Factor_Indicator
+:Legal_Factor_Indicator rdf:type owl:Class ;
+                        rdfs:subClassOf :Pestle_Factor_Indicator .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Limited_Innovation
+:Limited_Innovation rdf:type owl:Class ;
+                    owl:equivalentClass [ owl:intersectionOf ( :Global_Innovation_Index_Score
+                                                               [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty :has_Global_Innovation_Index ;
+                                                                 owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                      owl:onDatatype xsd:decimal ;
+                                                                                      owl:withRestrictions ( [ xsd:minExclusive 20.0
+                                                                                                             ]
+                                                                                                           )
+                                                                                    ]
+                                                               ]
+                                                               [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty :has_Global_Innovation_Index ;
+                                                                 owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                      owl:onDatatype xsd:decimal ;
+                                                                                      owl:withRestrictions ( [ xsd:maxInclusive 25.0
+                                                                                                             ]
+                                                                                                           )
+                                                                                    ]
+                                                               ]
+                                                             ) ;
+                                          rdf:type owl:Class
+                                        ] ;
+                    rdfs:subClassOf :Global_Innovation_Index_Score .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Low_Arable_Land_Mass
+:Low_Arable_Land_Mass rdf:type owl:Class ;
+                      owl:equivalentClass [ owl:intersectionOf ( :Arable_Land_Acreage
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty :has_Arable_Land_Acreage ;
+                                                                   owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                        owl:onDatatype xsd:decimal ;
+                                                                                        owl:withRestrictions ( [ xsd:minExclusive 1.0
+                                                                                                               ]
+                                                                                                             )
+                                                                                      ]
+                                                                 ]
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty :has_Arable_Land_Acreage ;
+                                                                   owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                        owl:onDatatype xsd:decimal ;
+                                                                                        owl:withRestrictions ( [ xsd:maxInclusive 5.0
+                                                                                                               ]
+                                                                                                             )
+                                                                                      ]
+                                                                 ]
+                                                               ) ;
+                                            rdf:type owl:Class
+                                          ] ;
+                      rdfs:subClassOf :Arable_Land_Acreage .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Low_Economic_Threshold
+:Low_Economic_Threshold rdf:type owl:Class ;
+                        owl:equivalentClass [ owl:intersectionOf ( :Gross_Domestic_Product_Per_Capita_Indicator
+                                                                   [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty :has_Gross_Domestic_Product_Per_Capita ;
+                                                                     owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                          owl:onDatatype xsd:decimal ;
+                                                                                          owl:withRestrictions ( [ xsd:maxExclusive 1000.0
+                                                                                                                 ]
+                                                                                                               )
+                                                                                        ]
+                                                                   ]
+                                                                 ) ;
+                                              rdf:type owl:Class
+                                            ] ;
+                        rdfs:subClassOf :Gross_Domestic_Product_Per_Capita_Indicator .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Low_Emission_Per_Capita
+:Low_Emission_Per_Capita rdf:type owl:Class ;
+                         owl:equivalentClass [ owl:intersectionOf ( :Emission_Per_Capita
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty :has_Emission_Per_Capita ;
+                                                                      owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                           owl:onDatatype xsd:decimal ;
+                                                                                           owl:withRestrictions ( [ xsd:minInclusive 0.41
+                                                                                                                  ]
+                                                                                                                )
+                                                                                         ]
+                                                                    ]
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty :has_Emission_Per_Capita ;
+                                                                      owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                           owl:onDatatype xsd:decimal ;
+                                                                                           owl:withRestrictions ( [ xsd:maxInclusive 1.00
+                                                                                                                  ]
+                                                                                                                )
+                                                                                         ]
+                                                                    ]
+                                                                  ) ;
+                                               rdf:type owl:Class
+                                             ] ;
+                         rdfs:subClassOf :Emission_Per_Capita .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Low_Land_Availability
+:Low_Land_Availability rdf:type owl:Class ;
+                       owl:equivalentClass [ owl:intersectionOf ( :Arable_Land_Acreage_Per_Capita
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty :has_Arable_Land_Acreage_Per_Capita ;
+                                                                    owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                         owl:onDatatype xsd:decimal ;
+                                                                                         owl:withRestrictions ( [ xsd:minExclusive 0.05
+                                                                                                                ]
+                                                                                                              )
+                                                                                       ]
+                                                                  ]
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty :has_Arable_Land_Acreage_Per_Capita ;
+                                                                    owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                         owl:onDatatype xsd:decimal ;
+                                                                                         owl:withRestrictions ( [ xsd:maxInclusive 0.15
+                                                                                                                ]
+                                                                                                              )
+                                                                                       ]
+                                                                  ]
+                                                                ) ;
+                                             rdf:type owl:Class
+                                           ] ;
+                       rdfs:subClassOf :Arable_Land_Acreage_Per_Capita .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Low_Political_Risk_Index
+:Low_Political_Risk_Index rdf:type owl:Class ;
+                          owl:equivalentClass [ owl:intersectionOf ( :Political_Risk_Index
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty :has_Political_Risk_Index ;
+                                                                       owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                            owl:onDatatype xsd:decimal ;
+                                                                                            owl:withRestrictions ( [ xsd:minExclusive 70.0
+                                                                                                                   ]
+                                                                                                                 )
+                                                                                          ]
+                                                                     ]
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty :has_Political_Risk_Index ;
+                                                                       owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                            owl:onDatatype xsd:decimal ;
+                                                                                            owl:withRestrictions ( [ xsd:maxInclusive 80.00
+                                                                                                                   ]
+                                                                                                                 )
+                                                                                          ]
+                                                                     ]
+                                                                   ) ;
+                                                rdf:type owl:Class
+                                              ] ;
+                          rdfs:subClassOf :Political_Risk_Index .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Macro_Economic_Factor_Indicator
+:Macro_Economic_Factor_Indicator rdf:type owl:Class ;
+                                 rdfs:subClassOf :Global_Sugarcane_Feedstock_Supply_Chain .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Medium_Arable_Land_Mass
+:Medium_Arable_Land_Mass rdf:type owl:Class ;
+                         owl:equivalentClass [ owl:intersectionOf ( :Arable_Land_Acreage
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty :has_Arable_Land_Acreage ;
+                                                                      owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                           owl:onDatatype xsd:decimal ;
+                                                                                           owl:withRestrictions ( [ xsd:minExclusive 5.0
+                                                                                                                  ]
+                                                                                                                )
+                                                                                         ]
+                                                                    ]
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty :has_Arable_Land_Acreage ;
+                                                                      owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                           owl:onDatatype xsd:decimal ;
+                                                                                           owl:withRestrictions ( [ xsd:maxInclusive 20.0
+                                                                                                                  ]
+                                                                                                                )
+                                                                                         ]
+                                                                    ]
+                                                                  ) ;
+                                               rdf:type owl:Class
+                                             ] ;
+                         rdfs:subClassOf :Arable_Land_Acreage .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Medium_Sugarcane_Acreage
+:Medium_Sugarcane_Acreage rdf:type owl:Class ;
+                          owl:equivalentClass [ owl:intersectionOf ( :Sugarcane_Acreage
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty :has_Sugarcane_Acreage ;
+                                                                       owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                            owl:onDatatype xsd:decimal ;
+                                                                                            owl:withRestrictions ( [ xsd:minExclusive 0.05
+                                                                                                                   ]
+                                                                                                                 )
+                                                                                          ]
+                                                                     ]
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty :has_Sugarcane_Acreage ;
+                                                                       owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                            owl:onDatatype xsd:decimal ;
+                                                                                            owl:withRestrictions ( [ xsd:maxInclusive 0.50
+                                                                                                                   ]
+                                                                                                                 )
+                                                                                          ]
+                                                                     ]
+                                                                   ) ;
+                                                rdf:type owl:Class
+                                              ] ;
+                          rdfs:subClassOf :Sugarcane_Acreage .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Mid_Value_Sugarcane_Bioeconomy
+:Mid_Value_Sugarcane_Bioeconomy rdf:type owl:Class ;
+                                owl:equivalentClass [ owl:intersectionOf ( :Sugarcane_Bioeconomy
+                                                                           [ rdf:type owl:Class ;
+                                                                             owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                                                             owl:onProperty :has_Arable_Land_Acreage_Per_Capita ;
+                                                                                             owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                                  owl:onDatatype xsd:decimal ;
+                                                                                                                  owl:withRestrictions ( [ xsd:minExclusive 0.15
+                                                                                                                                         ]
+                                                                                                                                       )
+                                                                                                                ]
+                                                                                           ]
+                                                                                           [ rdf:type owl:Restriction ;
+                                                                                             owl:onProperty :has_Sugarcane_Acreage ;
+                                                                                             owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                                  owl:onDatatype xsd:decimal ;
+                                                                                                                  owl:withRestrictions ( [ xsd:minExclusive 0.05
+                                                                                                                                         ]
+                                                                                                                                       )
+                                                                                                                ]
+                                                                                           ]
+                                                                                         )
+                                                                           ]
+                                                                           [ rdf:type owl:Class ;
+                                                                             owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                                                             owl:onProperty :has_Global_Innovation_Index ;
+                                                                                             owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                                  owl:onDatatype xsd:decimal ;
+                                                                                                                  owl:withRestrictions ( [ xsd:minExclusive 25.0
+                                                                                                                                         ]
+                                                                                                                                       )
+                                                                                                                ]
+                                                                                           ]
+                                                                                           [ rdf:type owl:Restriction ;
+                                                                                             owl:onProperty :has_Political_Risk_Index ;
+                                                                                             owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                                  owl:onDatatype xsd:decimal ;
+                                                                                                                  owl:withRestrictions ( [ xsd:minExclusive 60.0
+                                                                                                                                         ]
+                                                                                                                                       )
+                                                                                                                ]
+                                                                                           ]
+                                                                                         )
+                                                                           ]
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty :has_Gross_Domestic_Product_Per_Capita ;
+                                                                             owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                  owl:onDatatype xsd:decimal ;
+                                                                                                  owl:withRestrictions ( [ xsd:minInclusive 1000.0
+                                                                                                                         ]
+                                                                                                                       )
+                                                                                                ]
+                                                                           ]
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty :has_Sugarcane_Tonnage_Value ;
+                                                                             owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                  owl:onDatatype xsd:decimal ;
+                                                                                                  owl:withRestrictions ( [ xsd:minExclusive 1.0
+                                                                                                                         ]
+                                                                                                                         [ xsd:maxInclusive 8.0
+                                                                                                                         ]
+                                                                                                                       )
+                                                                                                ]
+                                                                           ]
+                                                                         ) ;
+                                                      rdf:type owl:Class
+                                                    ] ;
+                                rdfs:subClassOf :Sugarcane_Bioeconomy .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Mixed_Economic_Threshold
+:Mixed_Economic_Threshold rdf:type owl:Class ;
+                          owl:equivalentClass [ owl:intersectionOf ( :Gross_Domestic_Product_Per_Capita_Indicator
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty :has_Gross_Domestic_Product_Per_Capita ;
+                                                                       owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                            owl:onDatatype xsd:decimal ;
+                                                                                            owl:withRestrictions ( [ xsd:minExclusive 1000.0
+                                                                                                                   ]
+                                                                                                                 )
+                                                                                          ]
+                                                                     ]
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty :has_Gross_Domestic_Product_Per_Capita ;
+                                                                       owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                            owl:onDatatype xsd:decimal ;
+                                                                                            owl:withRestrictions ( [ xsd:maxInclusive 8000.0
+                                                                                                                   ]
+                                                                                                                 )
+                                                                                          ]
+                                                                     ]
+                                                                   ) ;
+                                                rdf:type owl:Class
+                                              ] ;
+                          rdfs:subClassOf :Gross_Domestic_Product_Per_Capita_Indicator .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Moderate_Economic_Threshold
+:Moderate_Economic_Threshold rdf:type owl:Class ;
+                             owl:equivalentClass [ owl:intersectionOf ( :Gross_Domestic_Product_Per_Capita_Indicator
+                                                                        [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty :has_Gross_Domestic_Product_Per_Capita ;
+                                                                          owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                               owl:onDatatype xsd:decimal ;
+                                                                                               owl:withRestrictions ( [ xsd:minExclusive 8000.0
+                                                                                                                      ]
+                                                                                                                    )
+                                                                                             ]
+                                                                        ]
+                                                                        [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty :has_Gross_Domestic_Product_Per_Capita ;
+                                                                          owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                               owl:onDatatype xsd:decimal ;
+                                                                                               owl:withRestrictions ( [ xsd:maxInclusive 20000.0
+                                                                                                                      ]
+                                                                                                                    )
+                                                                                             ]
+                                                                        ]
+                                                                      ) ;
+                                                   rdf:type owl:Class
+                                                 ] ;
+                             rdfs:subClassOf :Gross_Domestic_Product_Per_Capita_Indicator .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Moderate_Emission_Per_Capita
+:Moderate_Emission_Per_Capita rdf:type owl:Class ;
+                              owl:equivalentClass [ owl:intersectionOf ( :Emission_Per_Capita
+                                                                         [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty :has_Emission_Per_Capita ;
+                                                                           owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                owl:onDatatype xsd:decimal ;
+                                                                                                owl:withRestrictions ( [ xsd:minInclusive 1.01
+                                                                                                                       ]
+                                                                                                                     )
+                                                                                              ]
+                                                                         ]
+                                                                         [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty :has_Emission_Per_Capita ;
+                                                                           owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                owl:onDatatype xsd:decimal ;
+                                                                                                owl:withRestrictions ( [ xsd:maxInclusive 5.00
+                                                                                                                       ]
+                                                                                                                     )
+                                                                                              ]
+                                                                         ]
+                                                                       ) ;
+                                                    rdf:type owl:Class
+                                                  ] ;
+                              rdfs:subClassOf :Emission_Per_Capita .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Moderate_Land_Availability
+:Moderate_Land_Availability rdf:type owl:Class ;
+                            owl:equivalentClass [ owl:intersectionOf ( :Arable_Land_Acreage_Per_Capita
+                                                                       [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty :has_Arable_Land_Acreage_Per_Capita ;
+                                                                         owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                              owl:onDatatype xsd:decimal ;
+                                                                                              owl:withRestrictions ( [ xsd:minExclusive 0.15
+                                                                                                                     ]
+                                                                                                                   )
+                                                                                            ]
+                                                                       ]
+                                                                       [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty :has_Arable_Land_Acreage_Per_Capita ;
+                                                                         owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                              owl:onDatatype xsd:decimal ;
+                                                                                              owl:withRestrictions ( [ xsd:maxInclusive 0.30
+                                                                                                                     ]
+                                                                                                                   )
+                                                                                            ]
+                                                                       ]
+                                                                     ) ;
+                                                  rdf:type owl:Class
+                                                ] ;
+                            rdfs:subClassOf :Arable_Land_Acreage_Per_Capita .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Moderate_Political_Risk_Index
+:Moderate_Political_Risk_Index rdf:type owl:Class ;
+                               owl:equivalentClass [ owl:intersectionOf ( :Political_Risk_Index
+                                                                          [ rdf:type owl:Restriction ;
+                                                                            owl:onProperty :has_Political_Risk_Index ;
+                                                                            owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                 owl:onDatatype xsd:decimal ;
+                                                                                                 owl:withRestrictions ( [ xsd:minExclusive 60.0
+                                                                                                                        ]
+                                                                                                                      )
+                                                                                               ]
+                                                                          ]
+                                                                          [ rdf:type owl:Restriction ;
+                                                                            owl:onProperty :has_Political_Risk_Index ;
+                                                                            owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                 owl:onDatatype xsd:decimal ;
+                                                                                                 owl:withRestrictions ( [ xsd:maxInclusive 70.00
+                                                                                                                        ]
+                                                                                                                      )
+                                                                                               ]
+                                                                          ]
+                                                                        ) ;
+                                                     rdf:type owl:Class
+                                                   ] ;
+                               rdfs:subClassOf :Political_Risk_Index .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Nascent_Regional_Bioeconomy_Policy_Maturity_Score
+:Nascent_Regional_Bioeconomy_Policy_Maturity_Score rdf:type owl:Class ;
+                                                   owl:equivalentClass [ owl:intersectionOf ( :Regional_Bioeconomy_Policy_Maturity_Score
+                                                                                              [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty :has_Regional_Bioeconomy_Policy_Maturity_Score ;
+                                                                                                owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                                     owl:onDatatype xsd:decimal ;
+                                                                                                                     owl:withRestrictions ( [ xsd:minInclusive 1.0
+                                                                                                                                            ]
+                                                                                                                                            [ xsd:maxExclusive 2.0
+                                                                                                                                            ]
+                                                                                                                                          )
+                                                                                                                   ]
+                                                                                              ]
+                                                                                            ) ;
+                                                                         rdf:type owl:Class
+                                                                       ] ;
+                                                   rdfs:subClassOf :Regional_Bioeconomy_Policy_Maturity_Score .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Non_Sub_Saharan_Africa_Region
+:Non_Sub_Saharan_Africa_Region rdf:type owl:Class ;
+                               rdfs:subClassOf :Africa_Region .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Pestle_Factor_Indicator
+:Pestle_Factor_Indicator rdf:type owl:Class ;
+                         rdfs:subClassOf :Macro_Economic_Factor_Indicator .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Political_Factor_Indicator
+:Political_Factor_Indicator rdf:type owl:Class ;
+                            rdfs:subClassOf :Pestle_Factor_Indicator .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Political_Risk_Index
+:Political_Risk_Index rdf:type owl:Class ;
+                      rdfs:subClassOf :Political_Factor_Indicator .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Regional_Bioeconomy_Policy_Maturity_Score
+:Regional_Bioeconomy_Policy_Maturity_Score rdf:type owl:Class ;
+                                           rdfs:subClassOf :Legal_Factor_Indicator .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Rest_Of_The_World_Region
+:Rest_Of_The_World_Region rdf:type owl:Class ;
+                          rdfs:subClassOf :Sugarcane_Geo_Spatial_Region .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Small_Sugarcane_Acreage
+:Small_Sugarcane_Acreage rdf:type owl:Class ;
+                         owl:equivalentClass [ owl:intersectionOf ( :Sugarcane_Acreage
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty :has_Sugarcane_Acreage ;
+                                                                      owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                           owl:onDatatype xsd:decimal ;
+                                                                                           owl:withRestrictions ( [ xsd:minInclusive 0.01
+                                                                                                                  ]
+                                                                                                                )
+                                                                                         ]
+                                                                    ]
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty :has_Sugarcane_Acreage ;
+                                                                      owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                           owl:onDatatype xsd:decimal ;
+                                                                                           owl:withRestrictions ( [ xsd:maxInclusive 0.05
+                                                                                                                  ]
+                                                                                                                )
+                                                                                         ]
+                                                                    ]
+                                                                  ) ;
+                                               rdf:type owl:Class
+                                             ] ;
+                         rdfs:subClassOf :Sugarcane_Acreage .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Sociological_Factor_Indicator
+:Sociological_Factor_Indicator rdf:type owl:Class ;
+                               rdfs:subClassOf :Pestle_Factor_Indicator .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Sub_Saharan_Africa_Region
+:Sub_Saharan_Africa_Region rdf:type owl:Class ;
+                           rdfs:subClassOf :Africa_Region .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Sugarcane_Acreage
+:Sugarcane_Acreage rdf:type owl:Class ;
+                   rdfs:subClassOf :Sociological_Factor_Indicator .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Sugarcane_Bioeconomy
+:Sugarcane_Bioeconomy rdf:type owl:Class ;
+                      rdfs:subClassOf :Global_Sugarcane_Feedstock_Supply_Chain .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Sugarcane_Geo_Spatial_Region
+:Sugarcane_Geo_Spatial_Region rdf:type owl:Class ;
+                              rdfs:subClassOf :Global_Sugarcane_Feedstock_Supply_Chain .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Sugarcane_Low_Producer
+:Sugarcane_Low_Producer rdf:type owl:Class ;
+                        rdfs:subClassOf :Sugarcane_Producer ;
+                        rdfs:comment "Low Producers (LP): Nations with production volumes below 1 million tonne (<1 MT), corresponding to small-scale producers." .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Sugarcane_Medium_Producer
+:Sugarcane_Medium_Producer rdf:type owl:Class ;
+                           rdfs:subClassOf :Sugarcane_Producer ;
+                           rdfs:comment "Medium Producers (MP): Nations producing between 1 and 8 million tonnes (1–8 MT), indicating moderate production capacity." .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Sugarcane_Principal_Producer
+:Sugarcane_Principal_Producer rdf:type owl:Class ;
+                              rdfs:subClassOf :Sugarcane_Producer ;
+                              rdfs:comment "Principal Producers (PP): Nations with production volumes exceeding 100 MT (>100 MT), representing the highest tier of global production." .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Sugarcane_Producer
+:Sugarcane_Producer rdf:type owl:Class ;
+                    rdfs:subClassOf :Global_Sugarcane_Feedstock_Supply_Chain ;
+                    rdfs:comment "Sugarcane Producer class is made up of all cane producing nations. This class is subdvided into producers based on their tonnage levels." ;
+                    rdfs:isDefinedBy "Previous work done on SCB Ontology for the valorisation of sugarcane bagasse residues is available on this link: https://doi.org/10.1016/B978-0-443-15274-0.50536-9" ;
+                    rdfs:seeAlso "Survey of sugarcane producers was conducted using this link: https://uk.atlasbig.com/countries-by-sugarcane-production" .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Sugarcane_Top_Producer
+:Sugarcane_Top_Producer rdf:type owl:Class ;
+                        rdfs:subClassOf :Sugarcane_Producer ;
+                        rdfs:comment "Top Producers (TP): Nations producing between 8 and 100 million tonnes (>8 MT ≤ 100 MT), denoting countries with substantial but sub-principal production levels." .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Technological_Factor_Indicator
+:Technological_Factor_Indicator rdf:type owl:Class ;
+                                rdfs:subClassOf :Pestle_Factor_Indicator .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Unavailable_Regional_Bioeconomy_Policy_Maturity_Score
+:Unavailable_Regional_Bioeconomy_Policy_Maturity_Score rdf:type owl:Class ;
+                                                       owl:equivalentClass [ owl:intersectionOf ( :Regional_Bioeconomy_Policy_Maturity_Score
+                                                                                                  [ rdf:type owl:Restriction ;
+                                                                                                    owl:onProperty :has_Regional_Bioeconomy_Policy_Maturity_Score ;
+                                                                                                    owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                                         owl:onDatatype xsd:decimal ;
+                                                                                                                         owl:withRestrictions ( [ xsd:minInclusive 0.0
+                                                                                                                                                ]
+                                                                                                                                                [ xsd:maxExclusive 1.0
+                                                                                                                                                ]
+                                                                                                                                              )
+                                                                                                                       ]
+                                                                                                  ]
+                                                                                                ) ;
+                                                                             rdf:type owl:Class
+                                                                           ] ;
+                                                       rdfs:subClassOf :Regional_Bioeconomy_Policy_Maturity_Score .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Very_High_Arable_Land_Mass
+:Very_High_Arable_Land_Mass rdf:type owl:Class ;
+                            owl:equivalentClass [ owl:intersectionOf ( :Arable_Land_Acreage
+                                                                       [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty :has_Arable_Land_Acreage ;
+                                                                         owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                              owl:onDatatype xsd:decimal ;
+                                                                                              owl:withRestrictions ( [ xsd:minExclusive 60.0
+                                                                                                                     ]
+                                                                                                                   )
+                                                                                            ]
+                                                                       ]
+                                                                     ) ;
+                                                  rdf:type owl:Class
+                                                ] ;
+                            rdfs:subClassOf :Arable_Land_Acreage .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Very_High_Economic_Threshold
+:Very_High_Economic_Threshold rdf:type owl:Class ;
+                              owl:equivalentClass [ owl:intersectionOf ( :Gross_Domestic_Product_Per_Capita_Indicator
+                                                                         [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty :has_Gross_Domestic_Product_Per_Capita ;
+                                                                           owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                owl:onDatatype xsd:decimal ;
+                                                                                                owl:withRestrictions ( [ xsd:minExclusive 40000.0
+                                                                                                                       ]
+                                                                                                                     )
+                                                                                              ]
+                                                                         ]
+                                                                       ) ;
+                                                    rdf:type owl:Class
+                                                  ] ;
+                              rdfs:subClassOf :Gross_Domestic_Product_Per_Capita_Indicator .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Very_High_Emission_Per_Capita
+:Very_High_Emission_Per_Capita rdf:type owl:Class ;
+                               owl:equivalentClass [ owl:intersectionOf ( :Emission_Per_Capita
+                                                                          [ rdf:type owl:Restriction ;
+                                                                            owl:onProperty :has_Emission_Per_Capita ;
+                                                                            owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                 owl:onDatatype xsd:decimal ;
+                                                                                                 owl:withRestrictions ( [ xsd:minExclusive 10.00
+                                                                                                                        ]
+                                                                                                                      )
+                                                                                               ]
+                                                                          ]
+                                                                        ) ;
+                                                     rdf:type owl:Class
+                                                   ] ;
+                               rdfs:subClassOf :Emission_Per_Capita .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Very_High_Land_Availability
+:Very_High_Land_Availability rdf:type owl:Class ;
+                             owl:equivalentClass [ owl:intersectionOf ( :Arable_Land_Acreage_Per_Capita
+                                                                        [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty :has_Arable_Land_Acreage_Per_Capita ;
+                                                                          owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                               owl:onDatatype xsd:decimal ;
+                                                                                               owl:withRestrictions ( [ xsd:minExclusive 0.60
+                                                                                                                      ]
+                                                                                                                    )
+                                                                                             ]
+                                                                        ]
+                                                                      ) ;
+                                                   rdf:type owl:Class
+                                                 ] ;
+                             rdfs:subClassOf :Arable_Land_Acreage_Per_Capita .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Very_High_Political_Risk_Index
+:Very_High_Political_Risk_Index rdf:type owl:Class ;
+                                owl:equivalentClass [ owl:intersectionOf ( :Political_Risk_Index
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty :has_Political_Risk_Index ;
+                                                                             owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                  owl:onDatatype xsd:decimal ;
+                                                                                                  owl:withRestrictions ( [ xsd:maxInclusive 45.0
+                                                                                                                         ]
+                                                                                                                       )
+                                                                                                ]
+                                                                           ]
+                                                                         ) ;
+                                                      rdf:type owl:Class
+                                                    ] ;
+                                rdfs:subClassOf :Political_Risk_Index .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Very_Large_Sugarcane_Acreage
+:Very_Large_Sugarcane_Acreage rdf:type owl:Class ;
+                              owl:equivalentClass [ owl:intersectionOf ( :Sugarcane_Acreage
+                                                                         [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty :has_Sugarcane_Acreage ;
+                                                                           owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                owl:onDatatype xsd:decimal ;
+                                                                                                owl:withRestrictions ( [ xsd:minInclusive 1.00
+                                                                                                                       ]
+                                                                                                                     )
+                                                                                              ]
+                                                                         ]
+                                                                       ) ;
+                                                    rdf:type owl:Class
+                                                  ] ;
+                              rdfs:subClassOf :Sugarcane_Acreage .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Very_Low_Arable_Land_Mass
+:Very_Low_Arable_Land_Mass rdf:type owl:Class ;
+                           owl:equivalentClass [ owl:intersectionOf ( :Arable_Land_Acreage
+                                                                      [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty :has_Arable_Land_Acreage ;
+                                                                        owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                             owl:onDatatype xsd:decimal ;
+                                                                                             owl:withRestrictions ( [ xsd:maxInclusive 1.0
+                                                                                                                    ]
+                                                                                                                  )
+                                                                                           ]
+                                                                      ]
+                                                                    ) ;
+                                                 rdf:type owl:Class
+                                               ] ;
+                           rdfs:subClassOf :Arable_Land_Acreage .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Very_Low_Emission_Per_Capita
+:Very_Low_Emission_Per_Capita rdf:type owl:Class ;
+                              owl:equivalentClass [ owl:intersectionOf ( :Emission_Per_Capita
+                                                                         [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty :has_Emission_Per_Capita ;
+                                                                           owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                owl:onDatatype xsd:decimal ;
+                                                                                                owl:withRestrictions ( [ xsd:maxExclusive 0.40
+                                                                                                                       ]
+                                                                                                                     )
+                                                                                              ]
+                                                                         ]
+                                                                       ) ;
+                                                    rdf:type owl:Class
+                                                  ] ;
+                              rdfs:subClassOf :Emission_Per_Capita .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Very_Low_Land_Availability
+:Very_Low_Land_Availability rdf:type owl:Class ;
+                            owl:equivalentClass [ owl:intersectionOf ( :Arable_Land_Acreage_Per_Capita
+                                                                       [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty :has_Arable_Land_Acreage_Per_Capita ;
+                                                                         owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                              owl:onDatatype xsd:decimal ;
+                                                                                              owl:withRestrictions ( [ xsd:maxInclusive 0.05
+                                                                                                                     ]
+                                                                                                                   )
+                                                                                            ]
+                                                                       ]
+                                                                     ) ;
+                                                  rdf:type owl:Class
+                                                ] ;
+                            rdfs:subClassOf :Arable_Land_Acreage_Per_Capita .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Very_Low_Political_Risk_Index
+:Very_Low_Political_Risk_Index rdf:type owl:Class ;
+                               owl:equivalentClass [ owl:intersectionOf ( :Political_Risk_Index
+                                                                          [ rdf:type owl:Restriction ;
+                                                                            owl:onProperty :has_Political_Risk_Index ;
+                                                                            owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                 owl:onDatatype xsd:decimal ;
+                                                                                                 owl:withRestrictions ( [ xsd:minExclusive 80.0
+                                                                                                                        ]
+                                                                                                                      )
+                                                                                               ]
+                                                                          ]
+                                                                        ) ;
+                                                     rdf:type owl:Class
+                                                   ] ;
+                               rdfs:subClassOf :Political_Risk_Index .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Very_Small_Sugarcane_Acreage
+:Very_Small_Sugarcane_Acreage rdf:type owl:Class ;
+                              owl:equivalentClass [ owl:intersectionOf ( :Sugarcane_Acreage
+                                                                         [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty :has_Sugarcane_Acreage ;
+                                                                           owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                owl:onDatatype xsd:decimal ;
+                                                                                                owl:withRestrictions ( [ xsd:maxExclusive 0.01
+                                                                                                                       ]
+                                                                                                                     )
+                                                                                              ]
+                                                                         ]
+                                                                       ) ;
+                                                    rdf:type owl:Class
+                                                  ] ;
+                              rdfs:subClassOf :Sugarcane_Acreage .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Weak_Innovation
+:Weak_Innovation rdf:type owl:Class ;
+                 owl:equivalentClass [ owl:intersectionOf ( :Global_Innovation_Index_Score
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty :has_Global_Innovation_Index ;
+                                                              owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                   owl:onDatatype xsd:decimal ;
+                                                                                   owl:withRestrictions ( [ xsd:maxExclusive 20.0
+                                                                                                          ]
+                                                                                                        )
+                                                                                 ]
+                                                            ]
+                                                          ) ;
+                                       rdf:type owl:Class
+                                     ] ;
+                 rdfs:subClassOf :Global_Innovation_Index_Score .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Afghanistan
+:Afghanistan rdf:type owl:NamedIndividual ,
+                      :Sugarcane_Low_Producer ;
+             :located_In_Geospatial_Region :South_Asia ;
+             :has_Arable_Land_Acreage 7.8 ;
+             :has_Arable_Land_Acreage_Per_Capita 0.2 ;
+             :has_Emission_Per_Capita 0.21 ;
+             :has_Gross_Domestic_Product_Per_Capita 426.0 ;
+             :has_Sugarcane_Acreage 0.002 ;
+             :has_Sugarcane_Tonnage_Value 0.03 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Angola
+:Angola rdf:type owl:NamedIndividual ,
+                 :Sugarcane_Low_Producer ;
+        :located_In_Geospatial_Region :Central_Africa ;
+        :has_Arable_Land_Acreage 5.4 ;
+        :has_Arable_Land_Acreage_Per_Capita 0.15 ;
+        :has_Emission_Per_Capita 0.72 ;
+        :has_Global_Innovation_Index 15.0 ;
+        :has_Gross_Domestic_Product_Per_Capita 2300.0 ;
+        :has_Political_Risk_Index 64.0 ;
+        :has_Sugarcane_Acreage 0.024 ;
+        :has_Sugarcane_Tonnage_Value 0.6 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Antigua_And_Barbuda
+:Antigua_And_Barbuda rdf:type owl:NamedIndividual ,
+                              :Sugarcane_Low_Producer ;
+                     :located_In_Geospatial_Region :Caribbean_Island ;
+                     :has_Arable_Land_Acreage 0.004 ;
+                     :has_Arable_Land_Acreage_Per_Capita 0.04 ;
+                     :has_Emission_Per_Capita 7.34 ;
+                     :has_Gross_Domestic_Product_Per_Capita 14692.0 ;
+                     :has_Sugarcane_Acreage 0.00008 ;
+                     :has_Sugarcane_Tonnage_Value 0.005 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Argentina
+:Argentina rdf:type owl:NamedIndividual ,
+                    :Sugarcane_Top_Producer ;
+           :located_In_Geospatial_Region :South_America ;
+           :has_Arable_Land_Acreage 42.2 ;
+           :has_Arable_Land_Acreage_Per_Capita 0.93 ;
+           :has_Emission_Per_Capita 4.12 ;
+           :has_Global_Innovation_Index 29.8 ;
+           :has_Gross_Domestic_Product_Per_Capita 12402.0 ;
+           :has_Political_Risk_Index 62.0 ;
+           :has_Sugarcane_Acreage 0.38 ;
+           :has_Sugarcane_Tonnage_Value 19.0 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Australia
+:Australia rdf:type owl:NamedIndividual ,
+                    :Sugarcane_Top_Producer ;
+           :located_In_Geospatial_Region :Oceania ;
+           :has_Arable_Land_Acreage_Per_Capita 1.22 ;
+           :has_Emission_Per_Capita 14.31 ;
+           :has_Global_Innovation_Index 48.3 ;
+           :has_Gross_Domestic_Product_Per_Capita 59341.0 ;
+           :has_Political_Risk_Index 86.0 ;
+           :has_Sugarcane_Acreage 0.36 ;
+           :has_Sugarcane_Tonnage_Value 35.0 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Bangladesh
+:Bangladesh rdf:type owl:NamedIndividual ,
+                     :Sugarcane_Medium_Producer ;
+            :located_In_Geospatial_Region :South_Asia ;
+            :has_Arable_Land_Acreage 8.1 ;
+            :has_Arable_Land_Acreage_Per_Capita 0.05 ;
+            :has_Emission_Per_Capita 0.62 ;
+            :has_Global_Innovation_Index 20.2 ;
+            :has_Gross_Domestic_Product_Per_Capita 1684.0 ;
+            :has_Political_Risk_Index 65.0 ;
+            :has_Sugarcane_Acreage 0.08 ;
+            :has_Sugarcane_Tonnage_Value 4.0 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Barbados
+:Barbados rdf:type owl:NamedIndividual ,
+                   :Sugarcane_Low_Producer ;
+          :located_In_Geospatial_Region :Caribbean_Island ;
+          :has_Arable_Land_Acreage 0.007 ;
+          :has_Arable_Land_Acreage_Per_Capita 0.002 ,
+                                              0.02 ;
+          :has_Emission_Per_Capita 6.13 ;
+          :has_Gross_Domestic_Product_Per_Capita 14801.0 ;
+          :has_Sugarcane_Tonnage_Value 0.15 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Belize
+:Belize rdf:type owl:NamedIndividual ,
+                 :Sugarcane_Medium_Producer ;
+        :located_In_Geospatial_Region :Central_America ;
+        :has_Arable_Land_Acreage 0.1 ;
+        :has_Arable_Land_Acreage_Per_Capita 0.25 ;
+        :has_Emission_Per_Capita 1.57 ;
+        :has_Gross_Domestic_Product_Per_Capita 5733.0 ;
+        :has_Sugarcane_Acreage 0.04 ;
+        :has_Sugarcane_Tonnage_Value 1.7 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Benin
+:Benin rdf:type owl:NamedIndividual ,
+                :Sugarcane_Low_Producer ;
+       :located_In_Geospatial_Region :West_Africa ;
+       :has_Arable_Land_Acreage 6.9 ;
+       :has_Arable_Land_Acreage_Per_Capita 0.26 ;
+       :has_Emission_Per_Capita 0.69 ;
+       :has_Global_Innovation_Index 18.0 ;
+       :has_Gross_Domestic_Product_Per_Capita 1214.0 ;
+       :has_Sugarcane_Acreage 0.002 ;
+       :has_Sugarcane_Tonnage_Value 0.012 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Bhutan
+:Bhutan rdf:type owl:NamedIndividual ,
+                 :Sugarcane_Low_Producer ;
+        :located_In_Geospatial_Region :South_Asia ;
+        :has_Arable_Land_Acreage 0.094 ;
+        :has_Arable_Land_Acreage_Per_Capita 0.13 ;
+        :has_Emission_Per_Capita 2.34 ;
+        :has_Gross_Domestic_Product_Per_Capita 2977 ;
+        :has_Sugarcane_Acreage 0.000006 ;
+        :has_Sugarcane_Tonnage_Value 0.00042 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Bolivia
+:Bolivia rdf:type owl:NamedIndividual ,
+                  :Sugarcane_Top_Producer ;
+         :located_In_Geospatial_Region :South_America ;
+         :has_Arable_Land_Acreage 4.9 ;
+         :has_Arable_Land_Acreage_Per_Capita 0.45 ;
+         :has_Emission_Per_Capita 1.92 ;
+         :has_Global_Innovation_Index 23.4 ;
+         :has_Gross_Domestic_Product_Per_Capita 3062.0 ;
+         :has_Political_Risk_Index 64.0 ;
+         :has_Sugarcane_Acreage 0.18 ;
+         :has_Sugarcane_Tonnage_Value 9.6 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Brazil
+:Brazil rdf:type owl:NamedIndividual ,
+                 :Sugarcane_Principal_Producer ;
+        :located_In_Geospatial_Region :South_America ;
+        :has_Arable_Land_Acreage 58.30 ;
+        :has_Arable_Land_Acreage_Per_Capita 0.27 ;
+        :has_Emission_Per_Capita 2.28 ;
+        :has_Global_Innovation_Index 34.2 ;
+        :has_Gross_Domestic_Product_Per_Capita 8538.0 ;
+        :has_Political_Risk_Index 64.0 ;
+        :has_Sugarcane_Acreage 9.97 ;
+        :has_Sugarcane_Tonnage_Value 747.0 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Burkina_Faso
+:Burkina_Faso rdf:type owl:NamedIndividual ,
+                       :Sugarcane_Low_Producer ;
+              :located_In_Geospatial_Region :West_Africa ;
+              :has_Arable_Land_Acreage 6.1 ;
+              :has_Arable_Land_Acreage_Per_Capita 0.35 ;
+              :has_Emission_Per_Capita 0.25 ;
+              :has_Global_Innovation_Index 20.5 ;
+              :has_Gross_Domestic_Product_Per_Capita 740.0 ;
+              :has_Sugarcane_Acreage 0.005 ;
+              :has_Sugarcane_Tonnage_Value 0.5 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Burundi
+:Burundi rdf:type owl:NamedIndividual ,
+                  :Sugarcane_Low_Producer ;
+         :located_In_Geospatial_Region :Central_Africa ;
+         :has_Arable_Land_Acreage 1.3 ;
+         :has_Arable_Land_Acreage_Per_Capita 0.1 ;
+         :has_Emission_Per_Capita 0.06 ;
+         :has_Gross_Domestic_Product_Per_Capita 261 ;
+         :has_Sugarcane_Acreage 0.003 ;
+         :has_Sugarcane_Tonnage_Value 0.12 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Cambodia
+:Cambodia rdf:type owl:NamedIndividual ,
+                   :Sugarcane_Low_Producer ;
+          :located_In_Geospatial_Region :South_East_Asia ;
+          :has_Arable_Land_Acreage 4.1 ;
+          :has_Arable_Land_Acreage_Per_Capita 0.13 ,
+                                              0.24 ;
+          :has_Emission_Per_Capita 1.0 ;
+          :has_Global_Innovation_Index 22.8 ;
+          :has_Gross_Domestic_Product_Per_Capita 1430.0 ;
+          :has_Sugarcane_Tonnage_Value 0.59 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Cameroon
+:Cameroon rdf:type owl:NamedIndividual ,
+                   :Sugarcane_Medium_Producer ;
+          :located_In_Geospatial_Region :West_Africa ;
+          :has_Arable_Land_Acreage 6.2 ;
+          :has_Arable_Land_Acreage_Per_Capita 0.23 ;
+          :has_Emission_Per_Capita 0.38 ;
+          :has_Global_Innovation_Index 19.7 ;
+          :has_Gross_Domestic_Product_Per_Capita 1433.0 ;
+          :has_Political_Risk_Index 63.0 ;
+          :has_Sugarcane_Acreage 0.13 ;
+          :has_Sugarcane_Tonnage_Value 1.3 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Cape_Verde
+:Cape_Verde rdf:type owl:NamedIndividual ,
+                     :Sugarcane_Low_Producer ;
+            :located_In_Geospatial_Region :West_Africa ;
+            :has_Arable_Land_Acreage_Per_Capita 0.1 ;
+            :has_Emission_Per_Capita 1.59 ;
+            :has_Global_Innovation_Index 25.7 ;
+            :has_Gross_Domestic_Product_Per_Capita 2969.0 ;
+            :has_Sugarcane_Tonnage_Value 0.023 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Caribbean_Island
+:Caribbean_Island rdf:type owl:NamedIndividual ,
+                           :Americas_Region ;
+                  :has_Regional_Bioeconomy_Policy_Maturity_Score 1.0 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Central_Africa
+:Central_Africa rdf:type owl:NamedIndividual ,
+                         :Sub_Saharan_Africa_Region ;
+                :has_Regional_Bioeconomy_Policy_Maturity_Score 1.0 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Central_African_Republic
+:Central_African_Republic rdf:type owl:NamedIndividual ,
+                                   :Sugarcane_Low_Producer ;
+                          :located_In_Geospatial_Region :Central_Africa ;
+                          :has_Arable_Land_Acreage 1.8 ;
+                          :has_Arable_Land_Acreage_Per_Capita 0.35 ;
+                          :has_Emission_Per_Capita 0.05 ;
+                          :has_Gross_Domestic_Product_Per_Capita 371.0 ;
+                          :has_Sugarcane_Acreage 0.02 ;
+                          :has_Sugarcane_Tonnage_Value 0.11 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Central_America
+:Central_America rdf:type owl:NamedIndividual ,
+                          :Americas_Region ;
+                 :has_Regional_Bioeconomy_Policy_Maturity_Score 2.0 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Chad
+:Chad rdf:type owl:NamedIndividual ,
+               :Sugarcane_Low_Producer ;
+      :located_In_Geospatial_Region :Central_Africa ;
+      :has_Arable_Land_Acreage 5.3 ;
+      :has_Arable_Land_Acreage_Per_Capita 0.3 ;
+      :has_Emission_Per_Capita 0.13 ;
+      :has_Gross_Domestic_Product_Per_Capita 596.0 ;
+      :has_Sugarcane_Acreage 0.004 ;
+      :has_Sugarcane_Tonnage_Value 0.48 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#China
+:China rdf:type owl:NamedIndividual ,
+                :Sugarcane_Principal_Producer ;
+       :located_In_Geospatial_Region :East_Asia ;
+       :has_Arable_Land_Acreage 108.90 ;
+       :has_Arable_Land_Acreage_Per_Capita 0.08 ;
+       :has_Emission_Per_Capita 14.62 ;
+       :has_Global_Innovation_Index 54.8 ;
+       :has_Gross_Domestic_Product_Per_Capita 11188.00 ;
+       :has_Political_Risk_Index 67.0 ;
+       :has_Sugarcane_Acreage 1.14 ;
+       :has_Sugarcane_Tonnage_Value 108.7 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Colombia
+:Colombia rdf:type owl:NamedIndividual ,
+                   :Sugarcane_Top_Producer ;
+          :located_In_Geospatial_Region :South_America ;
+          :has_Arable_Land_Acreage 2.0 ;
+          :has_Arable_Land_Acreage_Per_Capita 0.05 ;
+          :has_Emission_Per_Capita 1.53 ;
+          :has_Global_Innovation_Index 31.7 ;
+          :has_Gross_Domestic_Product_Per_Capita 6418.0 ;
+          :has_Political_Risk_Index 69.0 ;
+          :has_Sugarcane_Acreage 0.43 ;
+          :has_Sugarcane_Tonnage_Value 36.0 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Congo_Republic
+:Congo_Republic rdf:type owl:NamedIndividual ,
+                         :Sugarcane_Low_Producer ;
+                :located_In_Geospatial_Region :Central_Africa ;
+                :has_Arable_Land_Acreage 0.55 ;
+                :has_Arable_Land_Acreage_Per_Capita 0.09 ;
+                :has_Emission_Per_Capita 1.26 ;
+                :has_Gross_Domestic_Product_Per_Capita 1516.0 ;
+                :has_Political_Risk_Index 60.0 ;
+                :has_Sugarcane_Acreage 0.02 ;
+                :has_Sugarcane_Tonnage_Value 0.72 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Costa_Rica
+:Costa_Rica rdf:type owl:NamedIndividual ,
+                     :Sugarcane_Medium_Producer ;
+            :located_In_Geospatial_Region :Central_America ;
+            :has_Arable_Land_Acreage 0.24 ;
+            :has_Arable_Land_Acreage_Per_Capita 0.03 ;
+            :has_Emission_Per_Capita 1.59 ;
+            :has_Global_Innovation_Index 34.5 ;
+            :has_Gross_Domestic_Product_Per_Capita 12894.0 ;
+            :has_Political_Risk_Index 73.0 ;
+            :has_Sugarcane_Acreage 0.06 ;
+            :has_Sugarcane_Tonnage_Value 4.4 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Cuba
+:Cuba rdf:type owl:NamedIndividual ,
+               :Sugarcane_Top_Producer ;
+      :located_In_Geospatial_Region :Central_America ;
+      :has_Arable_Land_Acreage 2.9 ;
+      :has_Arable_Land_Acreage_Per_Capita 0.26 ;
+      :has_Emission_Per_Capita 2.14 ;
+      :has_Gross_Domestic_Product_Per_Capita 7291.0 ;
+      :has_Political_Risk_Index 48.0 ;
+      :has_Sugarcane_Acreage 0.35 ;
+      :has_Sugarcane_Tonnage_Value 20.0 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Democratic_Republic_Of_Congo
+:Democratic_Republic_Of_Congo rdf:type owl:NamedIndividual ,
+                                       :Sugarcane_Medium_Producer ;
+                              :located_In_Geospatial_Region :Central_Africa ;
+                              :has_Arable_Land_Acreage 13.7 ;
+                              :has_Arable_Land_Acreage_Per_Capita 0.14 ;
+                              :has_Emission_Per_Capita 0.04 ;
+                              :has_Gross_Domestic_Product_Per_Capita 501.0 ;
+                              :has_Political_Risk_Index 50.0 ;
+                              :has_Sugarcane_Acreage 0.05 ;
+                              :has_Sugarcane_Tonnage_Value 2.4 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Djibouti
+:Djibouti rdf:type owl:NamedIndividual ,
+                   :Sugarcane_Low_Producer ;
+          :located_In_Geospatial_Region :North_Africa ;
+          :has_Arable_Land_Acreage 0.0003 ;
+          :has_Arable_Land_Acreage_Per_Capita 0 ;
+          :has_Emission_Per_Capita 0.6 ;
+          :has_Gross_Domestic_Product_Per_Capita 2906 ;
+          :has_Sugarcane_Tonnage_Value 0.000053 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Dominica
+:Dominica rdf:type owl:NamedIndividual ,
+                   :Sugarcane_Low_Producer ;
+          :located_In_Geospatial_Region :Caribbean_Island ;
+          :has_Arable_Land_Acreage 0.006 ;
+          :has_Arable_Land_Acreage_Per_Capita 0.09 ;
+          :has_Emission_Per_Capita 2.56 ;
+          :has_Gross_Domestic_Product_Per_Capita 6965 ;
+          :has_Sugarcane_Acreage 0.0003 ;
+          :has_Sugarcane_Tonnage_Value 0.005 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Dominican_Republic
+:Dominican_Republic rdf:type owl:NamedIndividual ,
+                             :Sugarcane_Medium_Producer ;
+                    :located_In_Geospatial_Region :Central_America ;
+                    :has_Arable_Land_Acreage 0.9 ;
+                    :has_Arable_Land_Acreage_Per_Capita 0.08 ;
+                    :has_Emission_Per_Capita 2.47 ;
+                    :has_Global_Innovation_Index 25.1 ;
+                    :has_Gross_Domestic_Product_Per_Capita 8411.0 ;
+                    :has_Political_Risk_Index 69.0 ;
+                    :has_Sugarcane_Acreage 0.043 ;
+                    :has_Sugarcane_Tonnage_Value 5.3 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#East_Africa
+:East_Africa rdf:type owl:NamedIndividual ,
+                      :Sub_Saharan_Africa_Region .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#East_Asia
+:East_Asia rdf:type owl:NamedIndividual ,
+                    :Asia_Region ;
+           :has_Regional_Bioeconomy_Policy_Maturity_Score 1.0 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Ecuador
+:Ecuador rdf:type owl:NamedIndividual ,
+                  :Sugarcane_Medium_Producer ;
+         :located_In_Geospatial_Region :South_America ;
+         :has_Arable_Land_Acreage 1.0 ;
+         :has_Arable_Land_Acreage_Per_Capita 0.06 ;
+         :has_Emission_Per_Capita 2.34 ;
+         :has_Global_Innovation_Index 25.4 ;
+         :has_Gross_Domestic_Product_Per_Capita 5492.0 ;
+         :has_Political_Risk_Index 53.0 ;
+         :has_Sugarcane_Acreage 0.13 ;
+         :has_Sugarcane_Tonnage_Value 7.5 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Egypt
+:Egypt rdf:type owl:NamedIndividual ,
+                :Sugarcane_Top_Producer ;
+       :located_In_Geospatial_Region :North_Africa ;
+       :has_Arable_Land_Acreage 3.1 ;
+       :has_Arable_Land_Acreage_Per_Capita 0.03 ;
+       :has_Emission_Per_Capita 18.0 ;
+       :has_Global_Innovation_Index 25.1 ;
+       :has_Gross_Domestic_Product_Per_Capita 3899.0 ;
+       :has_Political_Risk_Index 60.0 ;
+       :has_Sugarcane_Acreage 0.13 ;
+       :has_Sugarcane_Tonnage_Value 18.0 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#El_Salvador
+:El_Salvador rdf:type owl:NamedIndividual ,
+                      :Sugarcane_Medium_Producer ;
+             :located_In_Geospatial_Region :Central_America ;
+             :has_Arable_Land_Acreage 0.7 ;
+             :has_Arable_Land_Acreage_Per_Capita 0.12 ;
+             :has_Emission_Per_Capita 1.26 ;
+             :has_Global_Innovation_Index 25.0 ;
+             :has_Gross_Domestic_Product_Per_Capita 4134.0 ;
+             :has_Political_Risk_Index 70.0 ;
+             :has_Sugarcane_Acreage 0.08 ;
+             :has_Sugarcane_Tonnage_Value 7.0 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Eswatini
+:Eswatini rdf:type owl:NamedIndividual ,
+                   :Sugarcane_Medium_Producer ;
+          :located_In_Geospatial_Region :Southern_Africa ;
+          :has_Arable_Land_Acreage 0.2 ;
+          :has_Arable_Land_Acreage_Per_Capita 0.15 ;
+          :has_Emission_Per_Capita 1.03 ;
+          :has_Gross_Domestic_Product_Per_Capita 3924.0 ;
+          :has_Sugarcane_Acreage 0.1 ;
+          :has_Sugarcane_Tonnage_Value 5.6 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Ethiopia
+:Ethiopia rdf:type owl:NamedIndividual ,
+                   :Sugarcane_Medium_Producer ;
+          :located_In_Geospatial_Region :East_Africa ;
+          :has_Arable_Land_Acreage 16.3 ;
+          :has_Arable_Land_Acreage_Per_Capita 0.13 ;
+          :has_Emission_Per_Capita 0.17 ;
+          :has_Global_Innovation_Index 18.6 ;
+          :has_Gross_Domestic_Product_Per_Capita 835.0 ;
+          :has_Sugarcane_Acreage 0.03 ;
+          :has_Sugarcane_Tonnage_Value 1.5 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Europe
+:Europe rdf:type owl:NamedIndividual ,
+                 :Rest_Of_The_World_Region ;
+        :has_Regional_Bioeconomy_Policy_Maturity_Score 5.0 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Fiji
+:Fiji rdf:type owl:NamedIndividual ,
+               :Sugarcane_Medium_Producer ;
+      :located_In_Geospatial_Region :Oceania ;
+      :has_Arable_Land_Acreage 0.1 ;
+      :has_Arable_Land_Acreage_Per_Capita 0.08 ;
+      :has_Emission_Per_Capita 1.86 ;
+      :has_Gross_Domestic_Product_Per_Capita 4443.0 ;
+      :has_Sugarcane_Acreage 0.03 ;
+      :has_Sugarcane_Tonnage_Value 1.4 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#France
+:France rdf:type owl:NamedIndividual ,
+                 :Sugarcane_Medium_Producer ;
+        :located_In_Geospatial_Region :Europe ;
+        :has_Arable_Land_Acreage 18.0 ;
+        :has_Arable_Land_Acreage_Per_Capita 0.25 ;
+        :has_Emission_Per_Capita 4.58 ;
+        :has_Global_Innovation_Index 55.0 ;
+        :has_Gross_Domestic_Product_Per_Capita 38046.0 ;
+        :has_Political_Risk_Index 73.0 ;
+        :has_Sugarcane_Tonnage_Value 2.3 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Gabon
+:Gabon rdf:type owl:NamedIndividual ,
+                :Sugarcane_Low_Producer ;
+       :located_In_Geospatial_Region :West_Africa ;
+       :has_Arable_Land_Acreage 0.33 ;
+       :has_Arable_Land_Acreage_Per_Capita 0.14 ;
+       :has_Emission_Per_Capita 2.52 ;
+       :has_Gross_Domestic_Product_Per_Capita 6577.0 ;
+       :has_Political_Risk_Index 65.0 ;
+       :has_Sugarcane_Acreage 0.005 ;
+       :has_Sugarcane_Tonnage_Value 0.29 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Ghana
+:Ghana rdf:type owl:NamedIndividual ,
+                :Sugarcane_Low_Producer ;
+       :located_In_Geospatial_Region :West_Africa ;
+       :has_Arable_Land_Acreage 4.7 ;
+       :has_Arable_Land_Acreage_Per_Capita 0.14 ;
+       :has_Emission_Per_Capita 0.75 ;
+       :has_Global_Innovation_Index 22.3 ;
+       :has_Gross_Domestic_Product_Per_Capita 2015.0 ;
+       :has_Political_Risk_Index 67.0 ;
+       :has_Sugarcane_Acreage 0.006 ;
+       :has_Sugarcane_Tonnage_Value 0.15 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Grenada
+:Grenada rdf:type owl:NamedIndividual ,
+                  :Sugarcane_Low_Producer ;
+         :located_In_Geospatial_Region :South_America ;
+         :has_Arable_Land_Acreage 0.003 ;
+         :has_Arable_Land_Acreage_Per_Capita 0.03 ;
+         :has_Emission_Per_Capita 3.16 ;
+         :has_Sugarcane_Acreage 0.00013 ;
+         :has_Sugarcane_Tonnage_Value 0.007 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Guatemala
+:Guatemala rdf:type owl:NamedIndividual ,
+                    :Sugarcane_Top_Producer ;
+           :located_In_Geospatial_Region :Central_America ;
+           :has_Arable_Land_Acreage 1.6 ;
+           :has_Arable_Land_Acreage_Per_Capita 0.09 ;
+           :has_Emission_Per_Capita 1.11 ;
+           :has_Global_Innovation_Index 24.1 ;
+           :has_Gross_Domestic_Product_Per_Capita 4388.0 ;
+           :has_Political_Risk_Index 70.0 ;
+           :has_Sugarcane_Acreage 0.24 ;
+           :has_Sugarcane_Tonnage_Value 36.0 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Guinea
+:Guinea rdf:type owl:NamedIndividual ,
+                 :Sugarcane_Low_Producer ;
+        :located_In_Geospatial_Region :West_Africa ;
+        :has_Arable_Land_Acreage 3.1 ;
+        :has_Arable_Land_Acreage_Per_Capita 0.38 ;
+        :has_Emission_Per_Capita 0.24 ;
+        :has_Global_Innovation_Index 16.7 ;
+        :has_Gross_Domestic_Product_Per_Capita 973.0 ;
+        :has_Political_Risk_Index 62.0 ;
+        :has_Sugarcane_Acreage 0.006 ;
+        :has_Sugarcane_Tonnage_Value 0.31 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Guinea_Bissau
+:Guinea_Bissau rdf:type owl:NamedIndividual ,
+                        :Sugarcane_Low_Producer ;
+               :located_In_Geospatial_Region :West_Africa ;
+               :has_Arable_Land_Acreage 0.3 ;
+               :has_Arable_Land_Acreage_Per_Capita 0.19 ;
+               :has_Emission_Per_Capita 0.16 ;
+               :has_Gross_Domestic_Product_Per_Capita 614.0 ;
+               :has_Sugarcane_Acreage 0.0003 ;
+               :has_Sugarcane_Tonnage_Value 0.007 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Guyana
+:Guyana rdf:type owl:NamedIndividual ,
+                 :Sugarcane_Medium_Producer ;
+        :located_In_Geospatial_Region :South_America ;
+        :has_Arable_Land_Acreage 0.4 ;
+        :has_Arable_Land_Acreage_Per_Capita 0.12 ;
+        :has_Emission_Per_Capita 3.65 ;
+        :has_Gross_Domestic_Product_Per_Capita 10857.0 ;
+        :has_Political_Risk_Index 71.0 ;
+        :has_Sugarcane_Acreage 0.02 ;
+        :has_Sugarcane_Tonnage_Value 1.2 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Haiti
+:Haiti rdf:type owl:NamedIndividual ,
+                :Sugarcane_Medium_Producer ;
+       :located_In_Geospatial_Region :Caribbean_Island ;
+       :has_Arable_Land_Acreage 1.0 ;
+       :has_Arable_Land_Acreage_Per_Capita 0.09 ;
+       :has_Emission_Per_Capita 0.99 ;
+       :has_Gross_Domestic_Product_Per_Capita 1283.0 ;
+       :has_Political_Risk_Index 55.0 ;
+       :has_Sugarcane_Acreage 0.23 ;
+       :has_Sugarcane_Tonnage_Value 1.5 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Honduras
+:Honduras rdf:type owl:NamedIndividual ,
+                   :Sugarcane_Medium_Producer ;
+          :located_In_Geospatial_Region :Central_America ;
+          :has_Arable_Land_Acreage 1.0 ;
+          :has_Arable_Land_Acreage_Per_Capita 0.1 ;
+          :has_Emission_Per_Capita 0.99 ;
+          :has_Global_Innovation_Index 22.8 ;
+          :has_Gross_Domestic_Product_Per_Capita 2428.0 ;
+          :has_Political_Risk_Index 69.0 ;
+          :has_Sugarcane_Acreage 0.08 ;
+          :has_Sugarcane_Tonnage_Value 6.0 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#India
+:India rdf:type owl:NamedIndividual ,
+                :Sugarcane_Principal_Producer ;
+       :located_In_Geospatial_Region :South_Asia ;
+       :has_Arable_Land_Acreage 154.4 ;
+       :has_Arable_Land_Acreage_Per_Capita 0.11 ;
+       :has_Emission_Per_Capita 1.9 ;
+       :has_Global_Innovation_Index 36.4 ;
+       :has_Gross_Domestic_Product_Per_Capita 1937.0 ;
+       :has_Political_Risk_Index 72.0 ;
+       :has_Sugarcane_Acreage 5.2 ;
+       :has_Sugarcane_Tonnage_Value 377.0 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Indonesia
+:Indonesia rdf:type owl:NamedIndividual ,
+                    :Sugarcane_Top_Producer ;
+           :located_In_Geospatial_Region :South_East_Asia ;
+           :has_Arable_Land_Acreage 26.3 ;
+           :has_Arable_Land_Acreage_Per_Capita 0.06 ;
+           :has_Emission_Per_Capita 2.19 ;
+           :has_Global_Innovation_Index 27.1 ;
+           :has_Gross_Domestic_Product_Per_Capita 3893.0 ;
+           :has_Political_Risk_Index 70.0 ;
+           :has_Sugarcane_Acreage 0.45 ;
+           :has_Sugarcane_Tonnage_Value 54.0 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Iran
+:Iran rdf:type owl:NamedIndividual ,
+               :Sugarcane_Top_Producer ;
+      :located_In_Geospatial_Region :South_West_Asia ;
+      :has_Arable_Land_Acreage 15.7 ;
+      :has_Arable_Land_Acreage_Per_Capita 0.18 ;
+      :has_Emission_Per_Capita 8.43 ;
+      :has_Global_Innovation_Index 32.9 ;
+      :has_Gross_Domestic_Product_Per_Capita 5345.0 ;
+      :has_Political_Risk_Index 46.0 ;
+      :has_Sugarcane_Acreage 0.08 ;
+      :has_Sugarcane_Tonnage_Value 8.0 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Iraq
+:Iraq rdf:type owl:NamedIndividual ,
+               :Sugarcane_Low_Producer ;
+      :located_In_Geospatial_Region :South_West_Asia ;
+      :has_Arable_Land_Acreage 5.0 ;
+      :has_Arable_Land_Acreage_Per_Capita 0.12 ;
+      :has_Emission_Per_Capita 4.17 ;
+      :has_Gross_Domestic_Product_Per_Capita 4224.0 ;
+      :has_Political_Risk_Index 45.0 ;
+      :has_Sugarcane_Acreage 0.0004 ;
+      :has_Sugarcane_Tonnage_Value 0.01 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Ivory_Coast
+:Ivory_Coast rdf:type owl:NamedIndividual ,
+                      :Sugarcane_Medium_Producer ;
+             :located_In_Geospatial_Region :West_Africa ;
+             :has_Arable_Land_Acreage 3.5 ;
+             :has_Arable_Land_Acreage_Per_Capita 0.15 ;
+             :has_Emission_Per_Capita 0.54 ;
+             :has_Global_Innovation_Index 21.0 ;
+             :has_Gross_Domestic_Product_Per_Capita 2378.0 ;
+             :has_Political_Risk_Index 66.0 ;
+             :has_Sugarcane_Acreage 0.03 ;
+             :has_Sugarcane_Tonnage_Value 2.0 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Jamaica
+:Jamaica rdf:type owl:NamedIndividual ,
+                  :Sugarcane_Medium_Producer ;
+         :located_In_Geospatial_Region :Caribbean_Island ;
+         :has_Arable_Land_Acreage 0.1 ;
+         :has_Arable_Land_Acreage_Per_Capita 0.04 ;
+         :has_Emission_Per_Capita 2.77 ;
+         :has_Global_Innovation_Index 29.6 ;
+         :has_Gross_Domestic_Product_Per_Capita 4972.0 ;
+         :has_Political_Risk_Index 78.0 ;
+         :has_Sugarcane_Acreage 0.01 ;
+         :has_Sugarcane_Tonnage_Value 1.0 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Japan
+:Japan rdf:type owl:NamedIndividual ,
+                :Sugarcane_Medium_Producer ;
+       :located_In_Geospatial_Region :East_Asia ;
+       :has_Arable_Land_Acreage 4.1 ;
+       :has_Arable_Land_Acreage_Per_Capita 0.03 ;
+       :has_Emission_Per_Capita 8.6 ;
+       :has_Global_Innovation_Index 54.5 ;
+       :has_Gross_Domestic_Product_Per_Capita 35291.0 ;
+       :has_Political_Risk_Index 85.0 ;
+       :has_Sugarcane_Acreage 0.023 ;
+       :has_Sugarcane_Tonnage_Value 1.2 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Kenya
+:Kenya rdf:type owl:NamedIndividual ,
+                :Sugarcane_Medium_Producer ;
+       :located_In_Geospatial_Region :East_Africa ;
+       :has_Arable_Land_Acreage 5.8 ;
+       :has_Arable_Land_Acreage_Per_Capita 0.12 ;
+       :has_Emission_Per_Capita 0.41 ;
+       :has_Global_Innovation_Index 27.5 ;
+       :has_Gross_Domestic_Product_Per_Capita 1705.0 ;
+       :has_Political_Risk_Index 63.0 ;
+       :has_Sugarcane_Acreage 0.084 ;
+       :has_Sugarcane_Tonnage_Value 5.3 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Laos
+:Laos rdf:type owl:NamedIndividual ,
+               :Sugarcane_Medium_Producer ;
+      :located_In_Geospatial_Region :South_East_Asia ;
+      :has_Arable_Land_Acreage 1.2 ;
+      :has_Arable_Land_Acreage_Per_Capita 0.16 ;
+      :has_Emission_Per_Capita 2.83 ;
+      :has_Global_Innovation_Index 20.2 ;
+      :has_Gross_Domestic_Product_Per_Capita 2566.0 ;
+      :has_Sugarcane_Acreage 0.04 ;
+      :has_Sugarcane_Tonnage_Value 1.8 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Lebanon
+:Lebanon rdf:type owl:NamedIndividual ,
+                  :Sugarcane_Low_Producer ;
+         :located_In_Geospatial_Region :South_West_Asia ;
+         :has_Arable_Land_Acreage 0.14 ;
+         :has_Arable_Land_Acreage_Per_Capita 0.02 ;
+         :has_Emission_Per_Capita 4.33 ;
+         :has_Global_Innovation_Index 25.1 ;
+         :has_Gross_Domestic_Product_Per_Capita 6096.0 ;
+         :has_Sugarcane_Acreage 0.0002 ;
+         :has_Sugarcane_Tonnage_Value 0.00009 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Liberia
+:Liberia rdf:type owl:NamedIndividual ,
+                  :Sugarcane_Low_Producer ;
+         :located_In_Geospatial_Region :West_Africa ;
+         :has_Arable_Land_Acreage 0.5 ;
+         :has_Arable_Land_Acreage_Per_Capita 0.1 ;
+         :has_Emission_Per_Capita 0.28 ;
+         :has_Gross_Domestic_Product_Per_Capita 630.0 ;
+         :has_Sugarcane_Acreage 0.03 ;
+         :has_Sugarcane_Tonnage_Value 0.28 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Madagascar
+:Madagascar rdf:type owl:NamedIndividual ,
+                     :Sugarcane_Medium_Producer ;
+            :located_In_Geospatial_Region :Southern_Africa ;
+            :has_Arable_Land_Acreage 3.0 ;
+            :has_Arable_Land_Acreage_Per_Capita 0.1 ;
+            :has_Emission_Per_Capita 0.19 ;
+            :has_Global_Innovation_Index 22.5 ;
+            :has_Gross_Domestic_Product_Per_Capita 442.0 ;
+            :has_Sugarcane_Acreage 0.1 ;
+            :has_Sugarcane_Tonnage_Value 3.1 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Malawi
+:Malawi rdf:type owl:NamedIndividual ,
+                 :Sugarcane_Medium_Producer ;
+        :located_In_Geospatial_Region :Southern_Africa ;
+        :has_Arable_Land_Acreage 4.0 ;
+        :has_Arable_Land_Acreage_Per_Capita 0.2 ;
+        :has_Emission_Per_Capita 0.09 ;
+        :has_Global_Innovation_Index 22.9 ;
+        :has_Gross_Domestic_Product_Per_Capita 389.0 ;
+        :has_Sugarcane_Acreage 0.03 ;
+        :has_Sugarcane_Tonnage_Value 3.0 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Malaysia
+:Malaysia rdf:type owl:NamedIndividual ,
+                   :Sugarcane_Low_Producer ;
+          :located_In_Geospatial_Region :South_East_Asia ;
+          :has_Arable_Land_Acreage 0.83 ;
+          :has_Arable_Land_Acreage_Per_Capita 0.02 ;
+          :has_Emission_Per_Capita 7.56 ;
+          :has_Global_Innovation_Index 41.9 ;
+          :has_Gross_Domestic_Product_Per_Capita 10576.0 ;
+          :has_Political_Risk_Index 79.0 ;
+          :has_Sugarcane_Acreage 0.001 ;
+          :has_Sugarcane_Tonnage_Value 0.03 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Mali
+:Mali rdf:type owl:NamedIndividual ,
+               :Sugarcane_Low_Producer ;
+      :located_In_Geospatial_Region :West_Africa ;
+      :has_Arable_Land_Acreage 8.3 ;
+      :has_Arable_Land_Acreage_Per_Capita 0.37 ;
+      :has_Emission_Per_Capita 0.28 ;
+      :has_Global_Innovation_Index 19.5 ;
+      :has_Gross_Domestic_Product_Per_Capita 745.0 ;
+      :has_Sugarcane_Acreage 0.009 ;
+      :has_Sugarcane_Tonnage_Value 0.37 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Mauritius
+:Mauritius rdf:type owl:NamedIndividual ,
+                    :Sugarcane_Medium_Producer ;
+           :located_In_Geospatial_Region :Southern_Africa ;
+           :has_Arable_Land_Acreage 0.08 ;
+           :has_Arable_Land_Acreage_Per_Capita 0.06 ;
+           :has_Emission_Per_Capita 3.24 ;
+           :has_Global_Innovation_Index 35.2 ;
+           :has_Gross_Domestic_Product_Per_Capita 9704.0 ;
+           :has_Sugarcane_Acreage 0.04 ;
+           :has_Sugarcane_Tonnage_Value 3.2 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Mexico
+:Mexico rdf:type owl:NamedIndividual ,
+                 :Sugarcane_Top_Producer ;
+        :located_In_Geospatial_Region :North_America ;
+        :has_Arable_Land_Acreage 20.1 ;
+        :has_Arable_Land_Acreage_Per_Capita 0.17 ;
+        :has_Emission_Per_Capita 3.09 ;
+        :has_Global_Innovation_Index 34.5 ;
+        :has_Gross_Domestic_Product_Per_Capita 9525.0 ;
+        :has_Political_Risk_Index 72.0 ;
+        :has_Sugarcane_Acreage 0.8 ;
+        :has_Sugarcane_Tonnage_Value 59.0 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Morocco
+:Morocco rdf:type owl:NamedIndividual ,
+                  :Sugarcane_Low_Producer ;
+         :located_In_Geospatial_Region :North_Africa ;
+         :has_Arable_Land_Acreage 7.5 ;
+         :has_Arable_Land_Acreage_Per_Capita 0.19 ;
+         :has_Emission_Per_Capita 1.97 ;
+         :has_Global_Innovation_Index 29.3 ;
+         :has_Gross_Domestic_Product_Per_Capita 3291.0 ;
+         :has_Political_Risk_Index 71.0 ;
+         :has_Sugarcane_Acreage 0.009 ;
+         :has_Sugarcane_Tonnage_Value 0.62 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Mozambique
+:Mozambique rdf:type owl:NamedIndividual ,
+                     :Sugarcane_Medium_Producer ;
+            :located_In_Geospatial_Region :Southern_Africa ;
+            :has_Arable_Land_Acreage 5.7 ;
+            :has_Arable_Land_Acreage_Per_Capita 0.18 ;
+            :has_Emission_Per_Capita 0.26 ;
+            :has_Global_Innovation_Index 19.7 ;
+            :has_Gross_Domestic_Product_Per_Capita 573.0 ;
+            :has_Sugarcane_Acreage 0.05 ;
+            :has_Sugarcane_Tonnage_Value 3.1 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Myanmar
+:Myanmar rdf:type owl:NamedIndividual ,
+                  :Sugarcane_Top_Producer ;
+         :located_In_Geospatial_Region :South_East_Asia ;
+         :has_Arable_Land_Acreage 11.0 ;
+         :has_Arable_Land_Acreage_Per_Capita 0.21 ;
+         :has_Emission_Per_Capita 0.72 ;
+         :has_Global_Innovation_Index 18.4 ;
+         :has_Gross_Domestic_Product_Per_Capita 1317.0 ;
+         :has_Political_Risk_Index 49.0 ;
+         :has_Sugarcane_Acreage 0.18 ;
+         :has_Sugarcane_Tonnage_Value 11.0 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Nepal
+:Nepal rdf:type owl:NamedIndividual ,
+                :Sugarcane_Medium_Producer ;
+       :located_In_Geospatial_Region :South_Asia ;
+       :has_Arable_Land_Acreage 2.1 ;
+       :has_Arable_Land_Acreage_Per_Capita 0.05 ;
+       :has_Emission_Per_Capita 0.47 ;
+       :has_Global_Innovation_Index 22.5 ;
+       :has_Gross_Domestic_Product_Per_Capita 1037.0 ;
+       :has_Sugarcane_Acreage 0.06 ;
+       :has_Sugarcane_Tonnage_Value 3.6 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Nicaragua
+:Nicaragua rdf:type owl:NamedIndividual ,
+                    :Sugarcane_Medium_Producer ;
+           :located_In_Geospatial_Region :Central_America ;
+           :has_Arable_Land_Acreage 1.5 ;
+           :has_Arable_Land_Acreage_Per_Capita 0.23 ;
+           :has_Emission_Per_Capita 0.77 ;
+           :has_Gross_Domestic_Product_Per_Capita 2053.0 ;
+           :has_Political_Risk_Index 63.0 ;
+           :has_Sugarcane_Acreage 0.08 ;
+           :has_Sugarcane_Tonnage_Value 7.2 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Niger
+:Niger rdf:type owl:NamedIndividual ,
+                :Sugarcane_Low_Producer ;
+       :located_In_Geospatial_Region :West_Africa ;
+       :has_Arable_Land_Acreage 17.7 ;
+       :has_Arable_Land_Acreage_Per_Capita 0.72 ;
+       :has_Emission_Per_Capita 0.1 ;
+       :has_Global_Innovation_Index 17.8 ;
+       :has_Gross_Domestic_Product_Per_Capita 508.0 ;
+       :has_Sugarcane_Acreage 0.01 ;
+       :has_Sugarcane_Tonnage_Value 0.26 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Nigeria
+:Nigeria rdf:type owl:NamedIndividual ,
+                  :Sugarcane_Medium_Producer ;
+         :located_In_Geospatial_Region :West_Africa ;
+         :has_Arable_Land_Acreage 36.9 ;
+         :has_Arable_Land_Acreage_Per_Capita 0.17 ;
+         :has_Emission_Per_Capita 0.6 ;
+         :has_Global_Innovation_Index 20.1 ;
+         :has_Gross_Domestic_Product_Per_Capita 2430.0 ;
+         :has_Political_Risk_Index 57.0 ;
+         :has_Sugarcane_Acreage 0.09 ;
+         :has_Sugarcane_Tonnage_Value 1.4 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#North_Africa
+:North_Africa rdf:type owl:NamedIndividual ,
+                       :Non_Sub_Saharan_Africa_Region ;
+              :has_Regional_Bioeconomy_Policy_Maturity_Score 2.0 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#North_America
+:North_America rdf:type owl:NamedIndividual ,
+                        :Americas_Region ;
+               :has_Regional_Bioeconomy_Policy_Maturity_Score 4.0 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Oceania
+:Oceania rdf:type owl:NamedIndividual ,
+                  :Rest_Of_The_World_Region ;
+         :has_Regional_Bioeconomy_Policy_Maturity_Score 1.0 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Oman
+:Oman rdf:type owl:NamedIndividual ,
+               :Sugarcane_Low_Producer ;
+      :located_In_Geospatial_Region :South_West_Asia ;
+      :has_Arable_Land_Acreage 0.001 ,
+                               0.083 ;
+      :has_Arable_Land_Acreage_Per_Capita 0.02 ;
+      :has_Emission_Per_Capita 17.95 ;
+      :has_Global_Innovation_Index 29.3 ;
+      :has_Gross_Domestic_Product_Per_Capita 18301.0 ;
+      :has_Political_Risk_Index 76.0 ;
+      :has_Sugarcane_Acreage 0.0002 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Pakistan
+:Pakistan rdf:type owl:NamedIndividual ,
+                   :Sugarcane_Top_Producer ;
+          :located_In_Geospatial_Region :South_Asia ;
+          :has_Arable_Land_Acreage 30.5 ;
+          :has_Arable_Land_Acreage_Per_Capita 0.13 ;
+          :has_Emission_Per_Capita 1.04 ;
+          :has_Global_Innovation_Index 24.4 ;
+          :has_Gross_Domestic_Product_Per_Capita 1474.0 ;
+          :has_Political_Risk_Index 53.0 ;
+          :has_Sugarcane_Acreage 1.3 ;
+          :has_Sugarcane_Tonnage_Value 81.0 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Panama
+:Panama rdf:type owl:NamedIndividual ,
+                 :Sugarcane_Medium_Producer ;
+        :located_In_Geospatial_Region :Central_America ;
+        :has_Arable_Land_Acreage 0.56 ;
+        :has_Arable_Land_Acreage_Per_Capita 0.13 ;
+        :has_Emission_Per_Capita 2.87 ;
+        :has_Global_Innovation_Index 28.0 ;
+        :has_Gross_Domestic_Product_Per_Capita 13921.0 ;
+        :has_Political_Risk_Index 75.0 ;
+        :has_Sugarcane_Acreage 0.04 ;
+        :has_Sugarcane_Tonnage_Value 2.9 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Papua_New_Guinea
+:Papua_New_Guinea rdf:type owl:NamedIndividual ,
+                           :Sugarcane_Low_Producer ;
+                  :located_In_Geospatial_Region :Oceania ;
+                  :has_Arable_Land_Acreage 0.33 ;
+                  :has_Arable_Land_Acreage_Per_Capita 0.03 ;
+                  :has_Emission_Per_Capita 0.74 ;
+                  :has_Gross_Domestic_Product_Per_Capita 2413.0 ;
+                  :has_Political_Risk_Index 65.0 ;
+                  :has_Sugarcane_Acreage 0.013 ;
+                  :has_Sugarcane_Tonnage_Value 0.24 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Paraguay
+:Paraguay rdf:type owl:NamedIndividual ,
+                   :Sugarcane_Medium_Producer ;
+          :located_In_Geospatial_Region :South_America ;
+          :has_Arable_Land_Acreage 4.7 ;
+          :has_Arable_Land_Acreage_Per_Capita 0.66 ;
+          :has_Emission_Per_Capita 1.24 ;
+          :has_Global_Innovation_Index 26.4 ;
+          :has_Gross_Domestic_Product_Per_Capita 6265.0 ;
+          :has_Political_Risk_Index 73.0 ;
+          :has_Sugarcane_Acreage 0.11 ;
+          :has_Sugarcane_Tonnage_Value 6.2 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Peru
+:Peru rdf:type owl:NamedIndividual ,
+               :Sugarcane_Top_Producer ;
+      :located_In_Geospatial_Region :South_America ;
+      :has_Arable_Land_Acreage 4.3 ;
+      :has_Arable_Land_Acreage_Per_Capita 0.13 ;
+      :has_Emission_Per_Capita 1.64 ;
+      :has_Global_Innovation_Index 31.2 ;
+      :has_Gross_Domestic_Product_Per_Capita 6437.0 ;
+      :has_Political_Risk_Index 75.0 ;
+      :has_Sugarcane_Acreage 0.08 ;
+      :has_Sugarcane_Tonnage_Value 10.0 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Philippines
+:Philippines rdf:type owl:NamedIndividual ,
+                      :Sugarcane_Top_Producer ;
+             :located_In_Geospatial_Region :South_East_Asia ;
+             :has_Arable_Land_Acreage 5.6 ;
+             :has_Arable_Land_Acreage_Per_Capita 0.05 ;
+             :has_Emission_Per_Capita 1.33 ;
+             :has_Global_Innovation_Index 35.3 ;
+             :has_Gross_Domestic_Product_Per_Capita 3328.0 ;
+             :has_Political_Risk_Index 69.0 ;
+             :has_Sugarcane_Acreage 0.42 ;
+             :has_Sugarcane_Tonnage_Value 23.0 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Portugal
+:Portugal rdf:type owl:NamedIndividual ,
+                   :Sugarcane_Low_Producer ;
+          :located_In_Geospatial_Region :Europe ;
+          :has_Arable_Land_Acreage 0.9 ;
+          :has_Arable_Land_Acreage_Per_Capita 0.09 ;
+          :has_Emission_Per_Capita 3.8 ;
+          :has_Global_Innovation_Index 44.2 ;
+          :has_Gross_Domestic_Product_Per_Capita 20831.0 ;
+          :has_Political_Risk_Index 74.0 ;
+          :has_Sugarcane_Acreage 0.00006 ;
+          :has_Sugarcane_Tonnage_Value 0.006 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Rwanda
+:Rwanda rdf:type owl:NamedIndividual ,
+                 :Sugarcane_Low_Producer ;
+        :located_In_Geospatial_Region :Central_Africa ;
+        :has_Arable_Land_Acreage 1.3 ;
+        :has_Arable_Land_Acreage_Per_Capita 0.09 ;
+        :has_Emission_Per_Capita 0.09 ;
+        :has_Global_Innovation_Index 23.9 ;
+        :has_Gross_Domestic_Product_Per_Capita 890.0 ;
+        :has_Sugarcane_Acreage 0.008 ;
+        :has_Sugarcane_Tonnage_Value 0.12 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Samoa
+:Samoa rdf:type owl:NamedIndividual ,
+                :Sugarcane_Low_Producer ;
+       :located_In_Geospatial_Region :Oceania ;
+       :has_Emission_Per_Capita 1.78 ;
+       :has_Gross_Domestic_Product_Per_Capita 3856.0 ;
+       :has_Sugarcane_Tonnage_Value 0.000012 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Senegal
+:Senegal rdf:type owl:NamedIndividual ,
+                  :Sugarcane_Low_Producer ;
+         :located_In_Geospatial_Region :West_Africa ;
+         :has_Arable_Land_Acreage 3.8 ;
+         :has_Arable_Land_Acreage_Per_Capita 0.22 ;
+         :has_Emission_Per_Capita 0.68 ;
+         :has_Global_Innovation_Index 23.3 ;
+         :has_Gross_Domestic_Product_Per_Capita 1437.0 ;
+         :has_Sugarcane_Acreage 0.012 ;
+         :has_Sugarcane_Tonnage_Value 0.89 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Sierra_Leone
+:Sierra_Leone rdf:type owl:NamedIndividual ,
+                       :Sugarcane_Low_Producer ;
+              :located_In_Geospatial_Region :West_Africa ;
+              :has_Arable_Land_Acreage 3.9 ;
+              :has_Arable_Land_Acreage_Per_Capita 0.2 ;
+              :has_Emission_Per_Capita 0.12 ;
+              :has_Gross_Domestic_Product_Per_Capita 615.0 ;
+              :has_Sugarcane_Acreage 0.001 ;
+              :has_Sugarcane_Tonnage_Value 0.078 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Singapore
+:Singapore rdf:type owl:NamedIndividual ,
+                    :Sugarcane_Low_Producer ;
+           :located_In_Geospatial_Region :South_East_Asia ;
+           :has_Arable_Land_Acreage 0.000006 ;
+           :has_Emission_Per_Capita 9.71 ;
+           :has_Global_Innovation_Index 57.8 ;
+           :has_Gross_Domestic_Product_Per_Capita 66176.0 ;
+           :has_Political_Risk_Index 90.0 ;
+           :has_Sugarcane_Acreage 0.000002 ;
+           :has_Sugarcane_Tonnage_Value 0.00005 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Somalia
+:Somalia rdf:type owl:NamedIndividual ,
+                  :Sugarcane_Low_Producer ;
+         :located_In_Geospatial_Region :North_Africa ;
+         :has_Arable_Land_Acreage 1.1 ;
+         :has_Arable_Land_Acreage_Per_Capita 0.06 ;
+         :has_Emission_Per_Capita 0.05 ;
+         :has_Gross_Domestic_Product_Per_Capita 428.0 ;
+         :has_Sugarcane_Acreage 0.006 ;
+         :has_Sugarcane_Tonnage_Value 0.21 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#South_Africa
+:South_Africa rdf:type owl:NamedIndividual ,
+                       :Sugarcane_Top_Producer ;
+              :located_In_Geospatial_Region :Southern_Africa ;
+              :has_Arable_Land_Acreage 12.0 ;
+              :has_Arable_Land_Acreage_Per_Capita 0.2 ;
+              :has_Emission_Per_Capita 7.34 ;
+              :has_Global_Innovation_Index 32.7 ;
+              :has_Gross_Domestic_Product_Per_Capita 5948.0 ;
+              :has_Political_Risk_Index 66.0 ;
+              :has_Sugarcane_Acreage 0.28 ;
+              :has_Sugarcane_Tonnage_Value 19.0 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#South_America
+:South_America rdf:type owl:NamedIndividual ,
+                        :Americas_Region ;
+               :has_Regional_Bioeconomy_Policy_Maturity_Score 3.0 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#South_Asia
+:South_Asia rdf:type owl:NamedIndividual ,
+                     :Asia_Region ;
+            :has_Regional_Bioeconomy_Policy_Maturity_Score 1 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#South_East_Asia
+:South_East_Asia rdf:type owl:NamedIndividual ,
+                          :Asia_Region ;
+                 :has_Regional_Bioeconomy_Policy_Maturity_Score 3.0 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#South_West_Asia
+:South_West_Asia rdf:type owl:NamedIndividual ,
+                          :Asia_Region ;
+                 :has_Regional_Bioeconomy_Policy_Maturity_Score 0.0 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Southern_Africa
+:Southern_Africa rdf:type owl:NamedIndividual ,
+                          :Sub_Saharan_Africa_Region ;
+                 :has_Regional_Bioeconomy_Policy_Maturity_Score 2.0 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Spain
+:Spain rdf:type owl:NamedIndividual ,
+                :Sugarcane_Low_Producer ;
+       :located_In_Geospatial_Region :Europe ;
+       :has_Arable_Land_Acreage 11.6 ;
+       :has_Arable_Land_Acreage_Per_Capita 0.24 ;
+       :has_Emission_Per_Capita 4.99 ;
+       :has_Global_Innovation_Index 45.4 ;
+       :has_Gross_Domestic_Product_Per_Capita 26126.0 ;
+       :has_Political_Risk_Index 77.0 ;
+       :has_Sugarcane_Acreage 0.00002 ;
+       :has_Sugarcane_Tonnage_Value 0.0011 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Sri_Lanka
+:Sri_Lanka rdf:type owl:NamedIndividual ,
+                    :Sugarcane_Low_Producer ;
+           :located_In_Geospatial_Region :South_Asia ;
+           :has_Arable_Land_Acreage 1.4 ;
+           :has_Arable_Land_Acreage_Per_Capita 0.06 ;
+           :has_Emission_Per_Capita 1.13 ;
+           :has_Global_Innovation_Index 25.1 ;
+           :has_Gross_Domestic_Product_Per_Capita 4376.0 ;
+           :has_Political_Risk_Index 63.0 ;
+           :has_Sugarcane_Acreage 0.014 ;
+           :has_Sugarcane_Tonnage_Value 0.644 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#St_Kitts_And_Nevis
+:St_Kitts_And_Nevis rdf:type owl:NamedIndividual ,
+                             :Sugarcane_Low_Producer ;
+                    :located_In_Geospatial_Region :Caribbean_Island ;
+                    :has_Arable_Land_Acreage 0.005 ;
+                    :has_Arable_Land_Acreage_Per_Capita 0.11 ;
+                    :has_Emission_Per_Capita 4.94 ;
+                    :has_Gross_Domestic_Product_Per_Capita 18796.0 ;
+                    :has_Sugarcane_Acreage 0.002 ;
+                    :has_Sugarcane_Tonnage_Value 0.1 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#St_Lucia
+:St_Lucia rdf:type owl:NamedIndividual ,
+                   :Sugarcane_Low_Producer ;
+          :located_In_Geospatial_Region :Caribbean_Island ;
+          :has_Arable_Land_Acreage 0.003 ;
+          :has_Arable_Land_Acreage_Per_Capita 0.01 ;
+          :has_Emission_Per_Capita 3.94 ;
+          :has_Gross_Domestic_Product_Per_Capita 9362.0 ;
+          :has_Sugarcane_Acreage 0.00013 ;
+          :has_Sugarcane_Tonnage_Value 0.01 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#St_Vincents_And_The_Grenadines
+:St_Vincents_And_The_Grenadines rdf:type owl:NamedIndividual ,
+                                         :Sugarcane_Low_Producer ;
+                                :located_In_Geospatial_Region :Caribbean_Island ;
+                                :has_Arable_Land_Acreage 0.002 ;
+                                :has_Arable_Land_Acreage_Per_Capita 0.02 ;
+                                :has_Emission_Per_Capita 2.1 ;
+                                :has_Gross_Domestic_Product_Per_Capita 7927.0 ;
+                                :has_Sugarcane_Acreage 0.001 ;
+                                :has_Sugarcane_Tonnage_Value 0.017 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Sudan
+:Sudan rdf:type owl:NamedIndividual ,
+                :Sugarcane_Medium_Producer ;
+       :located_In_Geospatial_Region :North_Africa ;
+       :has_Arable_Land_Acreage 21.0 ;
+       :has_Arable_Land_Acreage_Per_Capita 0.44 ;
+       :has_Emission_Per_Capita 0.36 ;
+       :has_Gross_Domestic_Product_Per_Capita 1746.0 ;
+       :has_Political_Risk_Index 53.0 ;
+       :has_Sugarcane_Acreage 0.073 ;
+       :has_Sugarcane_Tonnage_Value 5.9 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Suriname
+:Suriname rdf:type owl:NamedIndividual ,
+                   :Sugarcane_Low_Producer ;
+          :located_In_Geospatial_Region :South_America ;
+          :has_Arable_Land_Acreage 0.058 ;
+          :has_Arable_Land_Acreage_Per_Capita 0.09 ;
+          :has_Emission_Per_Capita 4.64 ;
+          :has_Gross_Domestic_Product_Per_Capita 7008.0 ;
+          :has_Political_Risk_Index 70.0 ;
+          :has_Sugarcane_Acreage 0.002 ;
+          :has_Sugarcane_Tonnage_Value 0.13 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Syria
+:Syria rdf:type owl:NamedIndividual ,
+                :Sugarcane_Low_Producer ;
+       :located_In_Geospatial_Region :South_West_Asia ;
+       :has_Arable_Land_Acreage 4.7 ;
+       :has_Arable_Land_Acreage_Per_Capita 0.21 ;
+       :has_Emission_Per_Capita 1.32 ;
+       :has_Gross_Domestic_Product_Per_Capita 727.0 ;
+       :has_Political_Risk_Index 45.0 ;
+       :has_Sugarcane_Acreage 0.000001 ;
+       :has_Sugarcane_Tonnage_Value 0.000001 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Taiwan
+:Taiwan rdf:type owl:NamedIndividual ,
+                 :Sugarcane_Low_Producer ;
+        :located_In_Geospatial_Region :East_Asia ;
+        :has_Emission_Per_Capita 12.07 ;
+        :has_Sugarcane_Tonnage_Value 0.62 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Tanzania
+:Tanzania rdf:type owl:NamedIndividual ,
+                   :Sugarcane_Medium_Producer ;
+          :located_In_Geospatial_Region :East_Africa ;
+          :has_Arable_Land_Acreage 13.5 ;
+          :has_Arable_Land_Acreage_Per_Capita 0.21 ;
+          :has_Emission_Per_Capita 0.21 ;
+          :has_Global_Innovation_Index 25.6 ;
+          :has_Gross_Domestic_Product_Per_Capita 1040.0 ;
+          :has_Sugarcane_Acreage 0.05 ;
+          :has_Sugarcane_Tonnage_Value 3.1 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Thailand
+:Thailand rdf:type owl:NamedIndividual ,
+                   :Sugarcane_Principal_Producer ;
+          :located_In_Geospatial_Region :South_East_Asia ;
+          :has_Arable_Land_Acreage 17.1 ;
+          :has_Arable_Land_Acreage_Per_Capita 0.23 ;
+          :has_Emission_Per_Capita 3.88 ;
+          :has_Global_Innovation_Index 37.2 ;
+          :has_Gross_Domestic_Product_Per_Capita 6124.0 ;
+          :has_Political_Risk_Index 75.0 ;
+          :has_Sugarcane_Acreage 1.5 ;
+          :has_Sugarcane_Tonnage_Value 104.0 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#The_Bahamas
+:The_Bahamas rdf:type owl:NamedIndividual ,
+                      :Sugarcane_Low_Producer ;
+             :located_In_Geospatial_Region :North_America ;
+             :has_Arable_Land_Acreage 0.8 ;
+             :has_Arable_Land_Acreage_Per_Capita 0.02 ;
+             :has_Emission_Per_Capita 9.86 ;
+             :has_Gross_Domestic_Product_Per_Capita 26706.0 ;
+             :has_Sugarcane_Acreage 0.002 ;
+             :has_Sugarcane_Tonnage_Value 0.06 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Trinidad_and_Tobago
+:Trinidad_and_Tobago rdf:type owl:NamedIndividual ,
+                              :Sugarcane_Low_Producer ;
+                     :located_In_Geospatial_Region :South_America ;
+                     :has_Arable_Land_Acreage 0.025 ;
+                     :has_Arable_Land_Acreage_Per_Capita 0.02 ;
+                     :has_Emission_Per_Capita 21.01 ;
+                     :has_Global_Innovation_Index 24.8 ;
+                     :has_Gross_Domestic_Product_Per_Capita 14180.0 ;
+                     :has_Political_Risk_Index 76.0 ;
+                     :has_Sugarcane_Acreage 0.02 ;
+                     :has_Sugarcane_Tonnage_Value 0.8 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#USA
+:USA rdf:type owl:NamedIndividual ,
+              :Sugarcane_Top_Producer ;
+     :located_In_Geospatial_Region :North_America ;
+     :has_Arable_Land_Acreage 157.7 ;
+     :has_Arable_Land_Acreage_Per_Capita 0.46 ;
+     :has_Emission_Per_Capita 14.24 ;
+     :has_Global_Innovation_Index 61.3 ;
+     :has_Gross_Domestic_Product_Per_Capita 61856.0 ;
+     :has_Political_Risk_Index 83.0 ;
+     :has_Sugarcane_Acreage 0.4 ;
+     :has_Sugarcane_Tonnage_Value 31.0 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Uganda
+:Uganda rdf:type owl:NamedIndividual ,
+                 :Sugarcane_Medium_Producer ;
+        :located_In_Geospatial_Region :East_Africa ;
+        :has_Arable_Land_Acreage 6.9 ;
+        :has_Arable_Land_Acreage_Per_Capita 0.15 ;
+        :has_Emission_Per_Capita 0.14 ;
+        :has_Global_Innovation_Index 20.0 ;
+        :has_Gross_Domestic_Product_Per_Capita 921.0 ;
+        :has_Sugarcane_Acreage 0.09 ;
+        :has_Sugarcane_Tonnage_Value 4.0 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Uruguay
+:Uruguay rdf:type owl:NamedIndividual ,
+                  :Sugarcane_Low_Producer ;
+         :located_In_Geospatial_Region :South_America ;
+         :has_Arable_Land_Acreage 2.0 ;
+         :has_Arable_Land_Acreage_Per_Capita 0.6 ;
+         :has_Emission_Per_Capita 1.94 ;
+         :has_Global_Innovation_Index 32.2 ;
+         :has_Gross_Domestic_Product_Per_Capita 15875.0 ;
+         :has_Political_Risk_Index 79.0 ;
+         :has_Sugarcane_Acreage 0.007 ;
+         :has_Sugarcane_Tonnage_Value 0.35 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Venezuela
+:Venezuela rdf:type owl:NamedIndividual ,
+                    :Sugarcane_Medium_Producer ;
+           :located_In_Geospatial_Region :South_America ;
+           :has_Arable_Land_Acreage 2.6 ;
+           :has_Arable_Land_Acreage_Per_Capita 0.09 ;
+           :has_Emission_Per_Capita 3.12 ;
+           :has_Gross_Domestic_Product_Per_Capita 3474.0 ;
+           :has_Political_Risk_Index 37.0 ;
+           :has_Sugarcane_Acreage 0.06 ;
+           :has_Sugarcane_Tonnage_Value 4.17 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Vietnam
+:Vietnam rdf:type owl:NamedIndividual ,
+                  :Sugarcane_Top_Producer ;
+         :located_In_Geospatial_Region :South_East_Asia ;
+         :has_Arable_Land_Acreage 6.8 ;
+         :has_Arable_Land_Acreage_Per_Capita 0.07 ;
+         :has_Emission_Per_Capita 3.24 ;
+         :has_Gross_Domestic_Product_Per_Capita 3409.0 ;
+         :has_Political_Risk_Index 71.0 ;
+         :has_Sugarcane_Acreage 0.17 ;
+         :has_Sugarcane_Tonnage_Value 18.0 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#West_Africa
+:West_Africa rdf:type owl:NamedIndividual ,
+                      :Sub_Saharan_Africa_Region ;
+             :has_Regional_Bioeconomy_Policy_Maturity_Score 0.0 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Yemen
+:Yemen rdf:type owl:NamedIndividual ,
+                :Sugarcane_Low_Producer ;
+       :located_In_Geospatial_Region :South_West_Asia ;
+       :has_Arable_Land_Acreage 1.2 ;
+       :has_Arable_Land_Acreage_Per_Capita 0.03 ;
+       :has_Emission_Per_Capita 0.39 ;
+       :has_Global_Innovation_Index 15.4 ;
+       :has_Gross_Domestic_Product_Per_Capita 1195.0 ;
+       :has_Sugarcane_Acreage 0.00005 ;
+       :has_Sugarcane_Tonnage_Value 0.0005 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Zambia
+:Zambia rdf:type owl:NamedIndividual ,
+                 :Sugarcane_Medium_Producer ;
+        :located_In_Geospatial_Region :Southern_Africa ;
+        :has_Arable_Land_Acreage 3.8 ;
+        :has_Arable_Land_Acreage_Per_Capita 0.19 ;
+        :has_Emission_Per_Capita 0.36 ;
+        :has_Global_Innovation_Index 19.8 ;
+        :has_Gross_Domestic_Product_Per_Capita 1258.0 ;
+        :has_Political_Risk_Index 61.0 ;
+        :has_Sugarcane_Acreage 0.05 ;
+        :has_Sugarcane_Tonnage_Value 4.46 .
+
+
+###  http://www.semanticweb.org/maureenokibe/ontologies/2022/10/untitled-ontology-SCB2#Zimbabwe
+:Zimbabwe rdf:type owl:NamedIndividual ,
+                   :Sugarcane_Medium_Producer ;
+          :located_In_Geospatial_Region :Southern_Africa ;
+          :has_Arable_Land_Acreage 4.0 ;
+          :has_Arable_Land_Acreage_Per_Capita 0.25 ;
+          :has_Emission_Per_Capita 0.68 ;
+          :has_Global_Innovation_Index 21.9 ;
+          :has_Gross_Domestic_Product_Per_Capita 1289.0 ;
+          :has_Political_Risk_Index 38.0 ;
+          :has_Sugarcane_Acreage 0.05 ;
+          :has_Sugarcane_Tonnage_Value 3.31 .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
