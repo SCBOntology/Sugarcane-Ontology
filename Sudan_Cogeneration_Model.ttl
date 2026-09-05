@@ -1,0 +1,280 @@
+@prefix : <https://example.org/sudan-cogeneration#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://example.org/sudan-cogeneration#> .
+
+<https://example.org/sudan-cogeneration> rdf:type owl:Ontology ;
+                                          rdfs:label "Sudan Cogeneration Case Study Ontology"@en .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://example.org/sudan-cogeneration#has_Current_Valorisation_Technology
+:has_Current_Valorisation_Technology rdf:type owl:ObjectProperty ;
+                                     rdfs:domain :Sudanese_Sugar_Processing_Mill ;
+                                     rdfs:range :Valorisation_Technology .
+
+
+###  https://example.org/sudan-cogeneration#located_In
+:located_In rdf:type owl:ObjectProperty ;
+            rdfs:domain :Sudanese_Sugar_Processing_Mill ;
+            rdfs:range :Sugarcane_Producer .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://example.org/sudan-cogeneration#has_Cogeneration_Capacity
+:has_Cogeneration_Capacity rdf:type owl:DatatypeProperty ;
+                           rdfs:domain :Sudanese_Sugar_Processing_Mill ;
+                           rdfs:range xsd:decimal ;
+                           rdfs:comment "Unit: MW."@en .
+
+
+###  https://example.org/sudan-cogeneration#has_Grid_Connected_Bioenergy_Capacity_Upper_Bound
+:has_Grid_Connected_Bioenergy_Capacity_Upper_Bound rdf:type owl:DatatypeProperty ;
+                                                   rdfs:domain :Sugarcane_Producer ;
+                                                   rdfs:range xsd:decimal .
+
+
+###  https://example.org/sudan-cogeneration#has_National_Cogeneration_Capacity
+:has_National_Cogeneration_Capacity rdf:type owl:DatatypeProperty ;
+                                    rdfs:domain :Sugarcane_Producer ;
+                                    rdfs:range xsd:decimal .
+
+
+###  https://example.org/sudan-cogeneration#has_National_Sugarcane_Bagasse_Production
+:has_National_Sugarcane_Bagasse_Production rdf:type owl:DatatypeProperty ;
+                                           rdfs:domain :Sugarcane_Producer ;
+                                           rdfs:range xsd:decimal .
+
+
+###  https://example.org/sudan-cogeneration#has_Sugarcane_Bagasse_Electricity_Generation
+:has_Sugarcane_Bagasse_Electricity_Generation rdf:type owl:DatatypeProperty ;
+                                              rdfs:domain :Sugarcane_Producer ;
+                                              rdfs:range xsd:decimal .
+
+
+###  https://example.org/sudan-cogeneration#has_Sugarcane_Bagasse_Production
+:has_Sugarcane_Bagasse_Production rdf:type owl:DatatypeProperty ;
+                                  rdfs:domain :Sudanese_Sugar_Processing_Mill ;
+                                  rdfs:range xsd:decimal ;
+                                  rdfs:comment "Unit: Kt/year."@en .
+
+
+###  https://example.org/sudan-cogeneration#has_Total_Bioenergy_Capacity
+:has_Total_Bioenergy_Capacity rdf:type owl:DatatypeProperty ;
+                              rdfs:domain :Sugarcane_Producer ;
+                              rdfs:range xsd:decimal .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://example.org/sudan-cogeneration#High_Cogeneration_Potential
+:High_Cogeneration_Potential rdf:type owl:Class ;
+                             owl:equivalentClass [ owl:intersectionOf ( :Sudanese_Sugar_Processing_Mill
+                                                                        [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty :has_Current_Valorisation_Technology ;
+                                                                          owl:hasValue :Cogeneration
+                                                                        ]
+                                                                        [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty :has_Cogeneration_Capacity ;
+                                                                          owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                               owl:onDatatype xsd:decimal ;
+                                                                                               owl:withRestrictions ( [ xsd:minInclusive 50.0
+                                                                                                                      ]
+                                                                                                                    )
+                                                                                             ]
+                                                                        ]
+                                                                        [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty :has_Sugarcane_Bagasse_Production ;
+                                                                          owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                               owl:onDatatype xsd:decimal ;
+                                                                                               owl:withRestrictions ( [ xsd:minInclusive 1000.0
+                                                                                                                      ]
+                                                                                                                    )
+                                                                                             ]
+                                                                        ]
+                                                                      ) ;
+                                                   rdf:type owl:Class
+                                                 ] .
+
+
+###  https://example.org/sudan-cogeneration#Low_Cogeneration_Potential
+:Low_Cogeneration_Potential rdf:type owl:Class ;
+                            owl:equivalentClass [ owl:intersectionOf ( :Sudanese_Sugar_Processing_Mill
+                                                                       [ rdf:type owl:Class ;
+                                                                         owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty :has_Cogeneration_Capacity ;
+                                                                                         owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                              owl:onDatatype xsd:decimal ;
+                                                                                                              owl:withRestrictions ( [ xsd:maxExclusive 10.0
+                                                                                                                                     ]
+                                                                                                                                   )
+                                                                                                            ]
+                                                                                       ]
+                                                                                       [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty :has_Sugarcane_Bagasse_Production ;
+                                                                                         owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                              owl:onDatatype xsd:decimal ;
+                                                                                                              owl:withRestrictions ( [ xsd:maxExclusive 300.0
+                                                                                                                                     ]
+                                                                                                                                   )
+                                                                                                            ]
+                                                                                       ]
+                                                                                     )
+                                                                       ]
+                                                                       [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty :has_Current_Valorisation_Technology ;
+                                                                         owl:hasValue :Cogeneration
+                                                                       ]
+                                                                     ) ;
+                                                  rdf:type owl:Class
+                                                ] .
+
+
+###  https://example.org/sudan-cogeneration#Moderate_Cogeneration_Potential
+:Moderate_Cogeneration_Potential rdf:type owl:Class ;
+                                 owl:equivalentClass [ owl:intersectionOf ( :Sudanese_Sugar_Processing_Mill
+                                                                            [ rdf:type owl:Restriction ;
+                                                                              owl:onProperty :has_Current_Valorisation_Technology ;
+                                                                              owl:hasValue :Cogeneration
+                                                                            ]
+                                                                            [ rdf:type owl:Restriction ;
+                                                                              owl:onProperty :has_Cogeneration_Capacity ;
+                                                                              owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                   owl:onDatatype xsd:decimal ;
+                                                                                                   owl:withRestrictions ( [ xsd:minInclusive 10.0
+                                                                                                                          ]
+                                                                                                                          [ xsd:maxExclusive 50.0
+                                                                                                                          ]
+                                                                                                                        )
+                                                                                                 ]
+                                                                            ]
+                                                                            [ rdf:type owl:Restriction ;
+                                                                              owl:onProperty :has_Sugarcane_Bagasse_Production ;
+                                                                              owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                   owl:onDatatype xsd:decimal ;
+                                                                                                   owl:withRestrictions ( [ xsd:minInclusive 300.0
+                                                                                                                          ]
+                                                                                                                          [ xsd:maxExclusive 1000.0
+                                                                                                                          ]
+                                                                                                                        )
+                                                                                                 ]
+                                                                            ]
+                                                                          ) ;
+                                                       rdf:type owl:Class
+                                                     ] .
+
+
+###  https://example.org/sudan-cogeneration#Sudanese_Sugar_Processing_Mill
+:Sudanese_Sugar_Processing_Mill rdf:type owl:Class ;
+                                rdfs:subClassOf :Sugarcane_Processing_Facility .
+
+
+###  https://example.org/sudan-cogeneration#Sugarcane_Processing_Facility
+:Sugarcane_Processing_Facility rdf:type owl:Class .
+
+
+###  https://example.org/sudan-cogeneration#Sugarcane_Producer
+:Sugarcane_Producer rdf:type owl:Class .
+
+
+###  https://example.org/sudan-cogeneration#Valorisation_Technology
+:Valorisation_Technology rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://example.org/sudan-cogeneration#Assalaya
+:Assalaya rdf:type owl:NamedIndividual ,
+                   :Sudanese_Sugar_Processing_Mill ;
+          :has_Current_Valorisation_Technology :Cogeneration ;
+          :located_In :Sudan ;
+          :has_Cogeneration_Capacity 13.0 ;
+          :has_Sugarcane_Bagasse_Production 321.0 .
+
+
+###  https://example.org/sudan-cogeneration#Cogeneration
+:Cogeneration rdf:type owl:NamedIndividual ,
+                       :Valorisation_Technology .
+
+
+###  https://example.org/sudan-cogeneration#El_Guneid
+:El_Guneid rdf:type owl:NamedIndividual ,
+                    :Sudanese_Sugar_Processing_Mill ;
+           :has_Current_Valorisation_Technology :Cogeneration ;
+           :located_In :Sudan ;
+           :has_Cogeneration_Capacity 6.0 ;
+           :has_Sugarcane_Bagasse_Production 112.0 .
+
+
+###  https://example.org/sudan-cogeneration#Kenana
+:Kenana rdf:type owl:NamedIndividual ,
+                 :Sudanese_Sugar_Processing_Mill ;
+        :has_Current_Valorisation_Technology :Cogeneration ;
+        :located_In :Sudan ;
+        :has_Cogeneration_Capacity 20.0 ;
+        :has_Sugarcane_Bagasse_Production 322.0 .
+
+
+###  https://example.org/sudan-cogeneration#New_Halfa
+:New_Halfa rdf:type owl:NamedIndividual ,
+                    :Sudanese_Sugar_Processing_Mill ;
+           :has_Current_Valorisation_Technology :Cogeneration ;
+           :located_In :Sudan ;
+           :has_Cogeneration_Capacity 6.0 ;
+           :has_Sugarcane_Bagasse_Production 123.0 .
+
+
+###  https://example.org/sudan-cogeneration#Sennar
+:Sennar rdf:type owl:NamedIndividual ,
+                 :Sudanese_Sugar_Processing_Mill ;
+        :has_Current_Valorisation_Technology :Cogeneration ;
+        :located_In :Sudan ;
+        :has_Cogeneration_Capacity 6.5 ;
+        :has_Sugarcane_Bagasse_Production 321.0 .
+
+
+###  https://example.org/sudan-cogeneration#Sudan
+:Sudan rdf:type owl:NamedIndividual ,
+                :Sugarcane_Producer ;
+       :has_Grid_Connected_Bioenergy_Capacity_Upper_Bound 20.0 ;
+       :has_National_Cogeneration_Capacity 155.5 ;
+       :has_National_Sugarcane_Bagasse_Production 2549.0 ;
+       :has_Sugarcane_Bagasse_Electricity_Generation 97.7 ;
+       :has_Total_Bioenergy_Capacity 199.0 ;
+       rdfs:comment "The source reports less than 20 MW grid-connected; 20 MW is represented only as an upper bound, not an exact value."@en .
+
+
+###  https://example.org/sudan-cogeneration#White_Nile
+:White_Nile rdf:type owl:NamedIndividual ,
+                     :Sudanese_Sugar_Processing_Mill ;
+            :has_Current_Valorisation_Technology :Cogeneration ;
+            :located_In :Sudan ;
+            :has_Cogeneration_Capacity 104.0 ;
+            :has_Sugarcane_Bagasse_Production 1350.0 .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :High_Cogeneration_Potential
+                :Low_Cogeneration_Potential
+                :Moderate_Cogeneration_Potential
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
