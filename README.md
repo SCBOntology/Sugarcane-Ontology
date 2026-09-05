@@ -154,14 +154,6 @@ The resulting classification therefore represents **new inferred knowledge deriv
 
 ---
 
-**OWL reasoning asks:**
-
-> What new semantic knowledge logically follows from the explicitly instantiated facts and formally defined relationships?
-
-PROMETHEE II provides fine-grained numerical discrimination between alternatives, whereas the OWL framework provides semantic representation, deterministic classification and reusable inferential knowledge.
-
----
-
 ## Repository Structure
 
 The repository contains the core Sugarcane Ontology and modular scenario implementations.
