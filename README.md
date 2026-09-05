@@ -154,60 +154,11 @@ The resulting classification therefore represents **new inferred knowledge deriv
 
 ---
 
-## Comparative Assessment with PROMETHEE II
-
-The Sudan scenario is additionally evaluated using **PROMETHEE II (Preference Ranking Organization Method for Enrichment Evaluation II)**, an established Multi-Criteria Decision Analysis (MCDA) outranking method.
-
-The comparison uses the **same six Sudanese sugar-processing mills and the same underlying mill-level evidence**.
-
-Two directly comparable quantitative criteria are used:
-
-1. bagasse production (Kt/year); and
-2. installed cogeneration capacity (MW).
-
-PROMETHEE II evaluates the alternatives through pairwise preference comparisons and produces:
-
-- positive preference flow (φ+);
-- negative preference flow (φ−);
-- net preference flow (φ); and
-- a complete ranking of the six mills.
-
-The comparison is designed to evaluate two methodologically distinct forms of assessment:
-
-| Feature | PROMETHEE II | OWL Sugarcane Ontology |
-|---|---|---|
-| Evidence | Same Sudan mill-level data | Same Sudan mill-level data |
-| Alternatives / individuals | Six sugar-processing mills | Six instantiated sugar-processing mills |
-| Bagasse production | MCDA criterion | Datatype property |
-| Cogeneration capacity | MCDA criterion | Datatype property |
-| Contextual relationships | Not inherently represented semantically | Object-property relationships |
-| Decision mechanism | Pairwise preference and outranking | Formal logical axioms and OWL reasoning |
-| Primary output | Net φ and complete ranking | Inferred class membership |
-| Nature of output | Relative numerical preference | Deterministic semantic classification |
-| Explainability | Criteria, weights and preference flows | Explicit facts, relationships and logical class definitions |
-| Additional capability | Fine-grained ranking | Generation of new inferred semantic knowledge |
-
-PROMETHEE II and OWL are therefore not treated as computationally equivalent approaches.
-
-**PROMETHEE II asks:**
-
-> Which sugar-processing mill is relatively preferred under the specified criteria and weights?
-
 **OWL reasoning asks:**
 
 > What new semantic knowledge logically follows from the explicitly instantiated facts and formally defined relationships?
 
 PROMETHEE II provides fine-grained numerical discrimination between alternatives, whereas the OWL framework provides semantic representation, deterministic classification and reusable inferential knowledge.
-
----
-
-## Competency Question
-
-The comparative case study is guided by the competency question:
-
-> **Based on bagasse production and installed cogeneration capacity, what is the relative cogeneration potential of Sudan's sugar-processing mills?**
-
-The same underlying evidence is interrogated using OWL reasoning and PROMETHEE II to compare the nature and interpretation of the resulting knowledge.
 
 ---
 
