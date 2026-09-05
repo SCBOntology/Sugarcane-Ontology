@@ -106,7 +106,7 @@ The module introduces `Sudanese_Sugar_Processing_Mill` within the sugar-processi
 
 Published mill-level facts are represented through datatype properties including:
 
-- `hasSugarcane_Bagasse_Production`
+- `has_Sugarcane_Bagasse_Production`
 - `has_Cogeneration_Capacity`
 
 Contextual relationships are represented using object properties including:
