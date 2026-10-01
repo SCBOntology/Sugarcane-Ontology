@@ -1,0 +1,1649 @@
+@prefix : <https://w3id.org/owaimo/chapter4/pestle#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://w3id.org/owaimo/chapter4/pestle#> .
+
+<https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential> rdf:type owl:Ontology ;
+                                                                           rdfs:comment "Country-level ontology generated from the 'Producers and PESTLE Variables' worksheet. Spearman correlation results are intentionally excluded. Deployment classes are inferred from asserted country data."@en ;
+                                                                           rdfs:label "Global Bagasse Electricity Deployment Potential Ontology"@en .
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#hasArableLandPerCapita
+:hasArableLandPerCapita rdf:type owl:DatatypeProperty ;
+                        rdfs:domain :Sugarcane_Producer ;
+                        rdfs:range xsd:decimal ;
+                        rdfs:label "Arable land per capita (Ha/cap)"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#hasBagasseElectricityCapacity
+:hasBagasseElectricityCapacity rdf:type owl:DatatypeProperty ;
+                               rdfs:domain :Sugarcane_Producer ;
+                               rdfs:range xsd:decimal ;
+                               rdfs:label "Installed bagasse-based electricity generation capacity (MW)"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#hasCO2EmissionPerCapita
+:hasCO2EmissionPerCapita rdf:type owl:DatatypeProperty ;
+                         rdfs:domain :Sugarcane_Producer ;
+                         rdfs:range xsd:decimal ;
+                         rdfs:label "CO2 emission per capita (tCO2/cap)"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#hasDeploymentIntensity
+:hasDeploymentIntensity rdf:type owl:DatatypeProperty ;
+                        rdfs:domain :Sugarcane_Producer ;
+                        rdfs:range xsd:decimal ;
+                        rdfs:label "Deployment intensity (MW/Mt annual bagasse)"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#hasEstimatedBagasse
+:hasEstimatedBagasse rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :Sugarcane_Producer ;
+                     rdfs:range xsd:decimal ;
+                     rdfs:label "Estimated bagasse (Mt)"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#hasGDPPerCapita
+:hasGDPPerCapita rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Sugarcane_Producer ;
+                 rdfs:range xsd:decimal ;
+                 rdfs:label "GDP per capita (USD)"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#hasGII
+:hasGII rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Sugarcane_Producer ;
+        rdfs:range xsd:decimal ;
+        rdfs:label "GII"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#hasPRI
+:hasPRI rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Sugarcane_Producer ;
+        rdfs:range xsd:decimal ;
+        rdfs:label "PRI"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#hasSugarcaneHarvestedArea
+:hasSugarcaneHarvestedArea rdf:type owl:DatatypeProperty ;
+                           rdfs:domain :Sugarcane_Producer ;
+                           rdfs:range xsd:decimal ;
+                           rdfs:label "Sugarcane harvested area (Mha)"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#hasSugarcaneProduction
+:hasSugarcaneProduction rdf:type owl:DatatypeProperty ;
+                        rdfs:domain :Sugarcane_Producer ;
+                        rdfs:range xsd:decimal ;
+                        rdfs:label "Sugarcane production (Mt)"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#High_Bagasse_Electricity_Deployment
+:High_Bagasse_Electricity_Deployment rdf:type owl:Class ;
+                                     owl:equivalentClass [ owl:intersectionOf ( :Sugarcane_Producer
+                                                                                [ rdf:type owl:Restriction ;
+                                                                                  owl:onProperty :hasDeploymentIntensity ;
+                                                                                  owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                       owl:onDatatype xsd:decimal ;
+                                                                                                       owl:withRestrictions ( [ xsd:minInclusive 81.383333
+                                                                                                                              ]
+                                                                                                                            )
+                                                                                                     ]
+                                                                                ]
+                                                                              ) ;
+                                                           rdf:type owl:Class
+                                                         ] ;
+                                     rdfs:subClassOf :Sugarcane_Producer .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#High_Resource_Low_Deployment
+:High_Resource_Low_Deployment rdf:type owl:Class ;
+                              owl:equivalentClass [ owl:intersectionOf ( :Sugarcane_Producer
+                                                                         [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty :hasDeploymentIntensity ;
+                                                                           owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                owl:onDatatype xsd:decimal ;
+                                                                                                owl:withRestrictions ( [ xsd:maxExclusive 44.416667
+                                                                                                                       ]
+                                                                                                                     )
+                                                                                              ]
+                                                                         ]
+                                                                         [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty :hasEstimatedBagasse ;
+                                                                           owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                owl:onDatatype xsd:decimal ;
+                                                                                                owl:withRestrictions ( [ xsd:minInclusive 0.420000
+                                                                                                                       ]
+                                                                                                                     )
+                                                                                              ]
+                                                                         ]
+                                                                       ) ;
+                                                    rdf:type owl:Class
+                                                  ] ;
+                              rdfs:subClassOf :Sugarcane_Producer .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Low_Bagasse_Electricity_Deployment
+:Low_Bagasse_Electricity_Deployment rdf:type owl:Class ;
+                                    owl:equivalentClass [ owl:intersectionOf ( :Sugarcane_Producer
+                                                                               [ rdf:type owl:Restriction ;
+                                                                                 owl:onProperty :hasDeploymentIntensity ;
+                                                                                 owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                      owl:onDatatype xsd:decimal ;
+                                                                                                      owl:withRestrictions ( [ xsd:maxExclusive 44.416667
+                                                                                                                             ]
+                                                                                                                           )
+                                                                                                    ]
+                                                                               ]
+                                                                             ) ;
+                                                          rdf:type owl:Class
+                                                        ] ;
+                                    rdfs:subClassOf :Sugarcane_Producer .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Moderate_Bagasse_Electricity_Deployment
+:Moderate_Bagasse_Electricity_Deployment rdf:type owl:Class ;
+                                         owl:equivalentClass [ owl:intersectionOf ( :Sugarcane_Producer
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty :hasDeploymentIntensity ;
+                                                                                      owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                           owl:onDatatype xsd:decimal ;
+                                                                                                           owl:withRestrictions ( [ xsd:minInclusive 44.416667
+                                                                                                                                  ]
+                                                                                                                                  [ xsd:maxExclusive 81.383333
+                                                                                                                                  ]
+                                                                                                                                )
+                                                                                                         ]
+                                                                                    ]
+                                                                                  ) ;
+                                                               rdf:type owl:Class
+                                                             ] ;
+                                         rdfs:subClassOf :Sugarcane_Producer .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Sugarcane_Producer
+:Sugarcane_Producer rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Afghanistan
+:Afghanistan rdf:type owl:NamedIndividual ,
+                      :Sugarcane_Producer ;
+             :hasArableLandPerCapita 0.2 ;
+             :hasCO2EmissionPerCapita 0.21 ;
+             :hasEstimatedBagasse 0.01 ;
+             :hasGDPPerCapita 426 ;
+             :hasSugarcaneHarvestedArea 0.001582 ;
+             :hasSugarcaneProduction 0.03 ;
+             rdfs:label "Afghanistan"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Angola
+:Angola rdf:type owl:NamedIndividual ,
+                 :Sugarcane_Producer ;
+        :hasArableLandPerCapita 0.15 ;
+        :hasBagasseElectricityCapacity 51 ;
+        :hasCO2EmissionPerCapita 0.72 ;
+        :hasDeploymentIntensity 296.71 ;
+        :hasEstimatedBagasse 0.17 ;
+        :hasGDPPerCapita 2300 ;
+        :hasGII 15 ;
+        :hasPRI 64 ;
+        :hasSugarcaneHarvestedArea 0.025404 ;
+        :hasSugarcaneProduction 0.57 ;
+        rdfs:label "Angola"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Antigua_and_Barbuda
+:Antigua_and_Barbuda rdf:type owl:NamedIndividual ,
+                              :Sugarcane_Producer ;
+                     :hasArableLandPerCapita 0.04 ;
+                     :hasCO2EmissionPerCapita 7.34 ;
+                     :hasEstimatedBagasse 0 ;
+                     :hasGDPPerCapita 14692 ;
+                     :hasSugarcaneProduction 0.01 ;
+                     rdfs:label "Antigua and Barbuda"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Argentina
+:Argentina rdf:type owl:NamedIndividual ,
+                    :Sugarcane_Producer ;
+           :hasArableLandPerCapita 0.93 ;
+           :hasBagasseElectricityCapacity 155 ;
+           :hasCO2EmissionPerCapita 4.12 ;
+           :hasDeploymentIntensity 27.14 ;
+           :hasEstimatedBagasse 5.71 ;
+           :hasGDPPerCapita 12402 ;
+           :hasGII 29.8 ;
+           :hasPRI 62 ;
+           :hasSugarcaneHarvestedArea 0.365687 ;
+           :hasSugarcaneProduction 19.04 ;
+           rdfs:label "Argentina"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Australia
+:Australia rdf:type owl:NamedIndividual ,
+                    :Sugarcane_Producer ;
+           :hasArableLandPerCapita 1.22 ;
+           :hasBagasseElectricityCapacity 500 ;
+           :hasCO2EmissionPerCapita 14.31 ;
+           :hasDeploymentIntensity 47.62 ;
+           :hasEstimatedBagasse 10.5 ;
+           :hasGDPPerCapita 59341 ;
+           :hasGII 48.3 ;
+           :hasPRI 86 ;
+           :hasSugarcaneHarvestedArea 0.3624 ;
+           :hasSugarcaneProduction 35 ;
+           rdfs:label "Australia"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Bangladesh
+:Bangladesh rdf:type owl:NamedIndividual ,
+                     :Sugarcane_Producer ;
+            :hasArableLandPerCapita 0.05 ;
+            :hasBagasseElectricityCapacity 40 ;
+            :hasCO2EmissionPerCapita 0.62 ;
+            :hasDeploymentIntensity 36.64 ;
+            :hasEstimatedBagasse 1.09 ;
+            :hasGDPPerCapita 1684 ;
+            :hasGII 20.2 ;
+            :hasPRI 65 ;
+            :hasSugarcaneHarvestedArea 0.077827 ;
+            :hasSugarcaneProduction 3.64 ;
+            rdfs:label "Bangladesh"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Barbados
+:Barbados rdf:type owl:NamedIndividual ,
+                   :Sugarcane_Producer ;
+          :hasArableLandPerCapita 0.02 ;
+          :hasCO2EmissionPerCapita 6.13 ;
+          :hasEstimatedBagasse 0.04 ;
+          :hasGDPPerCapita 14801 ;
+          :hasSugarcaneHarvestedArea 0.001799 ;
+          :hasSugarcaneProduction 0.15 ;
+          rdfs:label "Barbados"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Belize
+:Belize rdf:type owl:NamedIndividual ,
+                 :Sugarcane_Producer ;
+        :hasArableLandPerCapita 0.25 ;
+        :hasBagasseElectricityCapacity 36 ;
+        :hasCO2EmissionPerCapita 1.57 ;
+        :hasDeploymentIntensity 70.28 ;
+        :hasEstimatedBagasse 0.51 ;
+        :hasGDPPerCapita 5733 ;
+        :hasSugarcaneHarvestedArea 0.041845 ;
+        :hasSugarcaneProduction 1.71 ;
+        rdfs:label "Belize"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Benin
+:Benin rdf:type owl:NamedIndividual ,
+                :Sugarcane_Producer ;
+       :hasArableLandPerCapita 0.26 ;
+       :hasCO2EmissionPerCapita 0.69 ;
+       :hasEstimatedBagasse 0 ;
+       :hasGDPPerCapita 1214 ;
+       :hasGII 18 ;
+       :hasSugarcaneHarvestedArea 0.002223 ;
+       :hasSugarcaneProduction 0.01 ;
+       rdfs:label "Benin"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Bhutan
+:Bhutan rdf:type owl:NamedIndividual ,
+                 :Sugarcane_Producer ;
+        :hasArableLandPerCapita 0.13 ;
+        :hasCO2EmissionPerCapita 2.34 ;
+        :hasEstimatedBagasse 0 ;
+        :hasGDPPerCapita 426 ;
+        :hasSugarcaneHarvestedArea 6e-06 ;
+        :hasSugarcaneProduction 0 ;
+        rdfs:label "Bhutan"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Bolivia
+:Bolivia rdf:type owl:NamedIndividual ,
+                  :Sugarcane_Producer ;
+         :hasArableLandPerCapita 0.45 ;
+         :hasBagasseElectricityCapacity 143 ;
+         :hasCO2EmissionPerCapita 1.92 ;
+         :hasDeploymentIntensity 49.57 ;
+         :hasEstimatedBagasse 2.88 ;
+         :hasGDPPerCapita 3062 ;
+         :hasGII 23.4 ;
+         :hasPRI 64 ;
+         :hasSugarcaneHarvestedArea 0.183675 ;
+         :hasSugarcaneProduction 9.62 ;
+         rdfs:label "Bolivia"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Brazil
+:Brazil rdf:type owl:NamedIndividual ,
+                 :Sugarcane_Producer ;
+        :hasArableLandPerCapita 0.27 ;
+        :hasBagasseElectricityCapacity 12022 ;
+        :hasCO2EmissionPerCapita 2.28 ;
+        :hasDeploymentIntensity 53.66 ;
+        :hasEstimatedBagasse 224.05 ;
+        :hasGDPPerCapita 8538 ;
+        :hasGII 34.2 ;
+        :hasPRI 64 ;
+        :hasSugarcaneHarvestedArea 9.97136 ;
+        :hasSugarcaneProduction 746.83 ;
+        rdfs:label "Brazil"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Burkina_Faso
+:Burkina_Faso rdf:type owl:NamedIndividual ,
+                       :Sugarcane_Producer ;
+              :hasArableLandPerCapita 0.35 ;
+              :hasCO2EmissionPerCapita 0.25 ;
+              :hasEstimatedBagasse 0.15 ;
+              :hasGDPPerCapita 740 ;
+              :hasGII 20.5 ;
+              :hasSugarcaneHarvestedArea 0.005029 ;
+              :hasSugarcaneProduction 0.49 ;
+              rdfs:label "Burkina Faso"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Burundi
+:Burundi rdf:type owl:NamedIndividual ,
+                  :Sugarcane_Producer ;
+         :hasArableLandPerCapita 0.1 ;
+         :hasBagasseElectricityCapacity 4 ;
+         :hasCO2EmissionPerCapita 0.06 ;
+         :hasDeploymentIntensity 74.72 ;
+         :hasEstimatedBagasse 0.05 ;
+         :hasGDPPerCapita 261 ;
+         :hasSugarcaneHarvestedArea 0.00354 ;
+         :hasSugarcaneProduction 0.18 ;
+         rdfs:label "Burundi"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Cambodia
+:Cambodia rdf:type owl:NamedIndividual ,
+                   :Sugarcane_Producer ;
+          :hasArableLandPerCapita 0.24 ;
+          :hasBagasseElectricityCapacity 27 ;
+          :hasCO2EmissionPerCapita 1 ;
+          :hasDeploymentIntensity 151.45 ;
+          :hasEstimatedBagasse 0.18 ;
+          :hasGDPPerCapita 1430 ;
+          :hasGII 22.8 ;
+          :hasSugarcaneHarvestedArea 0.01858 ;
+          :hasSugarcaneProduction 0.59 ;
+          rdfs:label "Cambodia"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Cameroon
+:Cameroon rdf:type owl:NamedIndividual ,
+                   :Sugarcane_Producer ;
+          :hasArableLandPerCapita 0.23 ;
+          :hasCO2EmissionPerCapita 0.38 ;
+          :hasEstimatedBagasse 0.39 ;
+          :hasGDPPerCapita 1433 ;
+          :hasGII 19.7 ;
+          :hasPRI 63 ;
+          :hasSugarcaneHarvestedArea 0.020936 ;
+          :hasSugarcaneProduction 1.29 ;
+          rdfs:label "Cameroon"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Cape_Verde
+:Cape_Verde rdf:type owl:NamedIndividual ,
+                     :Sugarcane_Producer ;
+            :hasCO2EmissionPerCapita 1.59 ;
+            :hasGDPPerCapita 2969 ;
+            :hasGII 25.7 ;
+            :hasSugarcaneHarvestedArea 0.003114 ;
+            rdfs:label "Cape Verde"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Central_African_Republic
+:Central_African_Republic rdf:type owl:NamedIndividual ,
+                                   :Sugarcane_Producer ;
+                          :hasArableLandPerCapita 0.35 ;
+                          :hasCO2EmissionPerCapita 0.05 ;
+                          :hasEstimatedBagasse 0.03 ;
+                          :hasGDPPerCapita 371 ;
+                          :hasSugarcaneHarvestedArea 0.018166 ;
+                          :hasSugarcaneProduction 0.11 ;
+                          rdfs:label "Central African Republic"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Chad
+:Chad rdf:type owl:NamedIndividual ,
+               :Sugarcane_Producer ;
+      :hasArableLandPerCapita 0.3 ;
+      :hasBagasseElectricityCapacity 2 ;
+      :hasCO2EmissionPerCapita 0.13 ;
+      :hasDeploymentIntensity 14.03 ;
+      :hasEstimatedBagasse 0.14 ;
+      :hasGDPPerCapita 596 ;
+      :hasSugarcaneHarvestedArea 0.003372 ;
+      :hasSugarcaneProduction 0.48 ;
+      rdfs:label "Chad"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#China
+:China rdf:type owl:NamedIndividual ,
+                :Sugarcane_Producer ;
+       :hasArableLandPerCapita 0.08 ;
+       :hasCO2EmissionPerCapita 8.73 ;
+       :hasEstimatedBagasse 32.62 ;
+       :hasGDPPerCapita 11188 ;
+       :hasGII 54.8 ;
+       :hasPRI 67 ;
+       :hasSugarcaneHarvestedArea 1.13616 ;
+       :hasSugarcaneProduction 108.72 ;
+       rdfs:label "China"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Colombia
+:Colombia rdf:type owl:NamedIndividual ,
+                   :Sugarcane_Producer ;
+          :hasArableLandPerCapita 0.05 ;
+          :hasBagasseElectricityCapacity 336 ;
+          :hasCO2EmissionPerCapita 1.53 ;
+          :hasDeploymentIntensity 30.87 ;
+          :hasEstimatedBagasse 10.88 ;
+          :hasGDPPerCapita 6418 ;
+          :hasGII 31.7 ;
+          :hasPRI 72 ;
+          :hasSugarcaneHarvestedArea 0.3456 ;
+          :hasSugarcaneProduction 36.28 ;
+          rdfs:label "Colombia"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Congo_Brazzaville
+:Congo_Brazzaville rdf:type owl:NamedIndividual ,
+                            :Sugarcane_Producer ;
+                   :hasArableLandPerCapita 0.09 ;
+                   :hasBagasseElectricityCapacity 5 ;
+                   :hasCO2EmissionPerCapita 1.26 ;
+                   :hasDeploymentIntensity 23.21 ;
+                   :hasEstimatedBagasse 0.22 ;
+                   :hasGDPPerCapita 1516 ;
+                   :hasPRI 60 ;
+                   :hasSugarcaneHarvestedArea 0.018155 ;
+                   :hasSugarcaneProduction 0.72 ;
+                   rdfs:label "Congo-Brazzaville"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Congo_Kinshasa
+:Congo_Kinshasa rdf:type owl:NamedIndividual ,
+                         :Sugarcane_Producer ;
+                :hasArableLandPerCapita 0.14 ;
+                :hasCO2EmissionPerCapita 0.04 ;
+                :hasEstimatedBagasse 0.71 ;
+                :hasGDPPerCapita 501 ;
+                :hasPRI 50 ;
+                :hasSugarcaneHarvestedArea 0.073782 ;
+                :hasSugarcaneProduction 2.36 ;
+                rdfs:label "Congo-Kinshasa"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Costa_Rica
+:Costa_Rica rdf:type owl:NamedIndividual ,
+                     :Sugarcane_Producer ;
+            :hasArableLandPerCapita 0.03 ;
+            :hasBagasseElectricityCapacity 71 ;
+            :hasCO2EmissionPerCapita 1.59 ;
+            :hasDeploymentIntensity 53.53 ;
+            :hasEstimatedBagasse 1.33 ;
+            :hasGDPPerCapita 12894 ;
+            :hasGII 19.8 ;
+            :hasPRI 73 ;
+            :hasSugarcaneHarvestedArea 0.060668 ;
+            :hasSugarcaneProduction 4.42 ;
+            rdfs:label "Costa Rica"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Cote_d_ivoire
+:Cote_d_ivoire rdf:type owl:NamedIndividual ,
+                        :Sugarcane_Producer ;
+               :hasArableLandPerCapita 0.15 ;
+               :hasCO2EmissionPerCapita 0.54 ;
+               :hasEstimatedBagasse 0.58 ;
+               :hasGDPPerCapita 2378 ;
+               :hasGII 21 ;
+               :hasPRI 66 ;
+               :hasSugarcaneHarvestedArea 0.026685 ;
+               :hasSugarcaneProduction 1.95 ;
+               rdfs:label "Cote d'ivoire"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Cuba
+:Cuba rdf:type owl:NamedIndividual ,
+               :Sugarcane_Producer ;
+      :hasArableLandPerCapita 0.26 ;
+      :hasBagasseElectricityCapacity 479 ;
+      :hasCO2EmissionPerCapita 2.14 ;
+      :hasDeploymentIntensity 81.26 ;
+      :hasEstimatedBagasse 5.89 ;
+      :hasGDPPerCapita 7291 ;
+      :hasPRI 48 ;
+      :hasSugarcaneHarvestedArea 0.3392 ;
+      :hasSugarcaneProduction 19.65 ;
+      rdfs:label "Cuba"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Djibouti
+:Djibouti rdf:type owl:NamedIndividual ,
+                   :Sugarcane_Producer ;
+          :hasCO2EmissionPerCapita 0.6 ;
+          :hasGDPPerCapita 2906 ;
+          :hasSugarcaneHarvestedArea 1e-06 ;
+          rdfs:label "Djibouti"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Dominica
+:Dominica rdf:type owl:NamedIndividual ,
+                   :Sugarcane_Producer ;
+          :hasArableLandPerCapita 0.09 ;
+          :hasCO2EmissionPerCapita 2.56 ;
+          :hasEstimatedBagasse 0 ;
+          :hasGDPPerCapita 6965 ;
+          :hasSugarcaneHarvestedArea 0.000251 ;
+          :hasSugarcaneProduction 0 ;
+          rdfs:label "Dominica"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Dominican_Republic
+:Dominican_Republic rdf:type owl:NamedIndividual ,
+                             :Sugarcane_Producer ;
+                    :hasArableLandPerCapita 0.08 ;
+                    :hasBagasseElectricityCapacity 48 ;
+                    :hasCO2EmissionPerCapita 2.47 ;
+                    :hasDeploymentIntensity 30.32 ;
+                    :hasEstimatedBagasse 1.58 ;
+                    :hasGDPPerCapita 8411 ;
+                    :hasGII 25.1 ;
+                    :hasPRI 69 ;
+                    :hasSugarcaneHarvestedArea 0.123595 ;
+                    :hasSugarcaneProduction 5.28 ;
+                    rdfs:label "Dominican Republic"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Ecuador
+:Ecuador rdf:type owl:NamedIndividual ,
+                  :Sugarcane_Producer ;
+         :hasArableLandPerCapita 0.06 ;
+         :hasBagasseElectricityCapacity 144 ;
+         :hasCO2EmissionPerCapita 2.34 ;
+         :hasDeploymentIntensity 63.98 ;
+         :hasEstimatedBagasse 2.25 ;
+         :hasGDPPerCapita 5492 ;
+         :hasGII 25.4 ;
+         :hasPRI 53 ;
+         :hasSugarcaneHarvestedArea 0.130398 ;
+         :hasSugarcaneProduction 7.5 ;
+         rdfs:label "Ecuador"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Egypt
+:Egypt rdf:type owl:NamedIndividual ,
+                :Sugarcane_Producer ;
+       :hasArableLandPerCapita 0.03 ;
+       :hasBagasseElectricityCapacity 67 ;
+       :hasCO2EmissionPerCapita 2.48 ;
+       :hasDeploymentIntensity 14.65 ;
+       :hasEstimatedBagasse 4.57 ;
+       :hasGDPPerCapita 3899 ;
+       :hasGII 25.1 ;
+       :hasPRI 60 ;
+       :hasSugarcaneHarvestedArea 0.135 ;
+       :hasSugarcaneProduction 15.24 ;
+       rdfs:label "Egypt"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#El_Salvador
+:El_Salvador rdf:type owl:NamedIndividual ,
+                      :Sugarcane_Producer ;
+             :hasArableLandPerCapita 0.12 ;
+             :hasBagasseElectricityCapacity 295 ;
+             :hasCO2EmissionPerCapita 1.26 ;
+             :hasDeploymentIntensity 139.56 ;
+             :hasEstimatedBagasse 2.11 ;
+             :hasGDPPerCapita 4134 ;
+             :hasGII 25 ;
+             :hasPRI 70 ;
+             :hasSugarcaneHarvestedArea 0.078362 ;
+             :hasSugarcaneProduction 7.05 ;
+             rdfs:label "El Salvador"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Ethiopia
+:Ethiopia rdf:type owl:NamedIndividual ,
+                   :Sugarcane_Producer ;
+          :hasArableLandPerCapita 0.13 ;
+          :hasBagasseElectricityCapacity 310 ;
+          :hasCO2EmissionPerCapita 0.17 ;
+          :hasDeploymentIntensity 700.62 ;
+          :hasEstimatedBagasse 0.44 ;
+          :hasGDPPerCapita 835 ;
+          :hasGII 18.6 ;
+          :hasSugarcaneHarvestedArea 0.025653 ;
+          :hasSugarcaneProduction 1.47 ;
+          rdfs:label "Ethiopia"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Fiji
+:Fiji rdf:type owl:NamedIndividual ,
+               :Sugarcane_Producer ;
+      :hasArableLandPerCapita 0.08 ;
+      :hasBagasseElectricityCapacity 42 ;
+      :hasCO2EmissionPerCapita 1.86 ;
+      :hasDeploymentIntensity 101.22 ;
+      :hasEstimatedBagasse 0.41 ;
+      :hasGDPPerCapita 4443 ;
+      :hasSugarcaneHarvestedArea 0.034 ;
+      :hasSugarcaneProduction 1.38 ;
+      rdfs:label "Fiji"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#France
+:France rdf:type owl:NamedIndividual ,
+                 :Sugarcane_Producer ;
+        :hasArableLandPerCapita 0.25 ;
+        :hasCO2EmissionPerCapita 4.58 ;
+        :hasGDPPerCapita 38046 ;
+        :hasGII 55 ;
+        :hasPRI 73 ;
+        rdfs:label "France"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Gabon
+:Gabon rdf:type owl:NamedIndividual ,
+                :Sugarcane_Producer ;
+       :hasArableLandPerCapita 0.14 ;
+       :hasCO2EmissionPerCapita 2.52 ;
+       :hasEstimatedBagasse 0.09 ;
+       :hasGDPPerCapita 6577 ;
+       :hasPRI 65 ;
+       :hasSugarcaneHarvestedArea 0.004154 ;
+       :hasSugarcaneProduction 0.29 ;
+       rdfs:label "Gabon"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Ghana
+:Ghana rdf:type owl:NamedIndividual ,
+                :Sugarcane_Producer ;
+       :hasArableLandPerCapita 0.14 ;
+       :hasCO2EmissionPerCapita 0.75 ;
+       :hasEstimatedBagasse 0.05 ;
+       :hasGDPPerCapita 2015 ;
+       :hasGII 22.3 ;
+       :hasPRI 67 ;
+       :hasSugarcaneHarvestedArea 0.006373 ;
+       :hasSugarcaneProduction 0.15 ;
+       rdfs:label "Ghana"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Grenada
+:Grenada rdf:type owl:NamedIndividual ,
+                  :Sugarcane_Producer ;
+         :hasArableLandPerCapita 0.03 ;
+         :hasCO2EmissionPerCapita 3.16 ;
+         :hasEstimatedBagasse 0 ;
+         :hasGDPPerCapita 8223 ;
+         :hasSugarcaneHarvestedArea 0.000126 ;
+         :hasSugarcaneProduction 0.01 ;
+         rdfs:label "Grenada"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Guatemala
+:Guatemala rdf:type owl:NamedIndividual ,
+                    :Sugarcane_Producer ;
+           :hasArableLandPerCapita 0.09 ;
+           :hasBagasseElectricityCapacity 863 ;
+           :hasCO2EmissionPerCapita 1.11 ;
+           :hasDeploymentIntensity 80.88 ;
+           :hasEstimatedBagasse 10.67 ;
+           :hasGDPPerCapita 4388 ;
+           :hasGII 24.1 ;
+           :hasPRI 70 ;
+           :hasSugarcaneHarvestedArea 0.223824 ;
+           :hasSugarcaneProduction 35.57 ;
+           rdfs:label "Guatemala"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Guinea
+:Guinea rdf:type owl:NamedIndividual ,
+                 :Sugarcane_Producer ;
+        :hasArableLandPerCapita 0.38 ;
+        :hasCO2EmissionPerCapita 0.24 ;
+        :hasEstimatedBagasse 0.09 ;
+        :hasGDPPerCapita 973 ;
+        :hasGII 16.7 ;
+        :hasPRI 62 ;
+        :hasSugarcaneHarvestedArea 0.005951 ;
+        :hasSugarcaneProduction 0.31 ;
+        rdfs:label "Guinea"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Guinea_Bissau
+:Guinea_Bissau rdf:type owl:NamedIndividual ,
+                        :Sugarcane_Producer ;
+               :hasArableLandPerCapita 0.19 ;
+               :hasCO2EmissionPerCapita 0.16 ;
+               :hasEstimatedBagasse 0 ;
+               :hasGDPPerCapita 614 ;
+               :hasSugarcaneHarvestedArea 0.000264 ;
+               :hasSugarcaneProduction 0.01 ;
+               rdfs:label "Guinea-Bissau"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Guyana
+:Guyana rdf:type owl:NamedIndividual ,
+                 :Sugarcane_Producer ;
+        :hasArableLandPerCapita 0.12 ;
+        :hasBagasseElectricityCapacity 30 ;
+        :hasCO2EmissionPerCapita 3.65 ;
+        :hasDeploymentIntensity 82.34 ;
+        :hasEstimatedBagasse 0.36 ;
+        :hasGDPPerCapita 10856 ;
+        :hasPRI 71 ;
+        :hasSugarcaneHarvestedArea 0.015228 ;
+        :hasSugarcaneProduction 1.21 ;
+        rdfs:label "Guyana"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Haiti
+:Haiti rdf:type owl:NamedIndividual ,
+                :Sugarcane_Producer ;
+       :hasArableLandPerCapita 0.09 ;
+       :hasCO2EmissionPerCapita 0.99 ;
+       :hasEstimatedBagasse 0.45 ;
+       :hasGDPPerCapita 1283 ;
+       :hasPRI 51 ;
+       :hasSugarcaneHarvestedArea 0.022495 ;
+       :hasSugarcaneProduction 1.5 ;
+       rdfs:label "Haiti"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Honduras
+:Honduras rdf:type owl:NamedIndividual ,
+                   :Sugarcane_Producer ;
+          :hasArableLandPerCapita 0.1 ;
+          :hasBagasseElectricityCapacity 135 ;
+          :hasCO2EmissionPerCapita 0.99 ;
+          :hasDeploymentIntensity 81.43 ;
+          :hasEstimatedBagasse 1.66 ;
+          :hasGDPPerCapita 2428 ;
+          :hasGII 22.8 ;
+          :hasPRI 69 ;
+          :hasSugarcaneHarvestedArea 0.061111 ;
+          :hasSugarcaneProduction 5.53 ;
+          rdfs:label "Honduras"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#India
+:India rdf:type owl:NamedIndividual ,
+                :Sugarcane_Producer ;
+       :hasArableLandPerCapita 0.11 ;
+       :hasCO2EmissionPerCapita 1.9 ;
+       :hasEstimatedBagasse 113.07 ;
+       :hasGDPPerCapita 1937 ;
+       :hasGII 36.4 ;
+       :hasPRI 72 ;
+       :hasSugarcaneHarvestedArea 4.8512 ;
+       :hasSugarcaneProduction 376.9 ;
+       rdfs:label "India"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Indonesia
+:Indonesia rdf:type owl:NamedIndividual ,
+                    :Sugarcane_Producer ;
+           :hasArableLandPerCapita 0.06 ;
+           :hasBagasseElectricityCapacity 240 ;
+           :hasCO2EmissionPerCapita 2.19 ;
+           :hasDeploymentIntensity 14.92 ;
+           :hasEstimatedBagasse 16.08 ;
+           :hasGDPPerCapita 3893 ;
+           :hasGII 27.1 ;
+           :hasPRI 70 ;
+           :hasSugarcaneHarvestedArea 0.44896 ;
+           :hasSugarcaneProduction 53.61 ;
+           rdfs:label "Indonesia"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Iran
+:Iran rdf:type owl:NamedIndividual ,
+               :Sugarcane_Producer ;
+      :hasArableLandPerCapita 0.18 ;
+      :hasCO2EmissionPerCapita 8.43 ;
+      :hasEstimatedBagasse 2.43 ;
+      :hasGDPPerCapita 5345 ;
+      :hasGII 32.9 ;
+      :hasPRI 46 ;
+      :hasSugarcaneHarvestedArea 0.078325 ;
+      :hasSugarcaneProduction 8.11 ;
+      rdfs:label "Iran"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Iraq
+:Iraq rdf:type owl:NamedIndividual ,
+               :Sugarcane_Producer ;
+      :hasArableLandPerCapita 0.12 ;
+      :hasCO2EmissionPerCapita 4.17 ;
+      :hasEstimatedBagasse 0 ;
+      :hasGDPPerCapita 4224 ;
+      :hasPRI 45 ;
+      :hasSugarcaneHarvestedArea 0 ;
+      :hasSugarcaneProduction 0.01 ;
+      rdfs:label "Iraq"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Jamaica
+:Jamaica rdf:type owl:NamedIndividual ,
+                  :Sugarcane_Producer ;
+         :hasArableLandPerCapita 0.04 ;
+         :hasBagasseElectricityCapacity 32 ;
+         :hasCO2EmissionPerCapita 2.77 ;
+         :hasDeploymentIntensity 103.72 ;
+         :hasEstimatedBagasse 0.31 ;
+         :hasGDPPerCapita 4972 ;
+         :hasGII 29.6 ;
+         :hasPRI 78 ;
+         :hasSugarcaneHarvestedArea 0.009858 ;
+         :hasSugarcaneProduction 1.03 ;
+         rdfs:label "Jamaica"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Japan
+:Japan rdf:type owl:NamedIndividual ,
+                :Sugarcane_Producer ;
+       :hasArableLandPerCapita 0.03 ;
+       :hasCO2EmissionPerCapita 8.6 ;
+       :hasEstimatedBagasse 0.37 ;
+       :hasGDPPerCapita 35291 ;
+       :hasGII 54.5 ;
+       :hasPRI 85 ;
+       :hasSugarcaneHarvestedArea 0.0233 ;
+       :hasSugarcaneProduction 1.22 ;
+       rdfs:label "Japan"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Kenya
+:Kenya rdf:type owl:NamedIndividual ,
+                :Sugarcane_Producer ;
+       :hasArableLandPerCapita 0.12 ;
+       :hasBagasseElectricityCapacity 97 ;
+       :hasCO2EmissionPerCapita 0.41 ;
+       :hasDeploymentIntensity 61.45 ;
+       :hasEstimatedBagasse 1.58 ;
+       :hasGDPPerCapita 1705 ;
+       :hasGII 27.5 ;
+       :hasPRI 63 ;
+       :hasSugarcaneHarvestedArea 0.093288 ;
+       :hasSugarcaneProduction 5.26 ;
+       rdfs:label "Kenya"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Laos
+:Laos rdf:type owl:NamedIndividual ,
+               :Sugarcane_Producer ;
+      :hasArableLandPerCapita 0.16 ;
+      :hasBagasseElectricityCapacity 107 ;
+      :hasCO2EmissionPerCapita 2.83 ;
+      :hasDeploymentIntensity 194.42 ;
+      :hasEstimatedBagasse 0.55 ;
+      :hasGDPPerCapita 2566 ;
+      :hasGII 20.2 ;
+      :hasSugarcaneHarvestedArea 0.023013 ;
+      :hasSugarcaneProduction 1.83 ;
+      rdfs:label "Laos"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Lebanon
+:Lebanon rdf:type owl:NamedIndividual ,
+                  :Sugarcane_Producer ;
+         :hasArableLandPerCapita 0.02 ;
+         :hasCO2EmissionPerCapita 4.33 ;
+         :hasEstimatedBagasse 0 ;
+         :hasGDPPerCapita 6096 ;
+         :hasGII 25.1 ;
+         :hasSugarcaneProduction 0 ;
+         rdfs:label "Lebanon"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Liberia
+:Liberia rdf:type owl:NamedIndividual ,
+                  :Sugarcane_Producer ;
+         :hasArableLandPerCapita 0.1 ;
+         :hasCO2EmissionPerCapita 0.28 ;
+         :hasEstimatedBagasse 0.08 ;
+         :hasGDPPerCapita 630 ;
+         :hasSugarcaneHarvestedArea 0.027259 ;
+         :hasSugarcaneProduction 0.28 ;
+         rdfs:label "Liberia"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Madagascar
+:Madagascar rdf:type owl:NamedIndividual ,
+                     :Sugarcane_Producer ;
+            :hasArableLandPerCapita 0.1 ;
+            :hasCO2EmissionPerCapita 0.19 ;
+            :hasEstimatedBagasse 0.94 ;
+            :hasGDPPerCapita 442 ;
+            :hasGII 22.5 ;
+            :hasSugarcaneHarvestedArea 0.100607 ;
+            :hasSugarcaneProduction 3.14 ;
+            rdfs:label "Madagascar"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Malawi
+:Malawi rdf:type owl:NamedIndividual ,
+                 :Sugarcane_Producer ;
+        :hasArableLandPerCapita 0.2 ;
+        :hasBagasseElectricityCapacity 19 ;
+        :hasCO2EmissionPerCapita 0.09 ;
+        :hasDeploymentIntensity 20.94 ;
+        :hasEstimatedBagasse 0.91 ;
+        :hasGDPPerCapita 389 ;
+        :hasGII 22.9 ;
+        :hasSugarcaneHarvestedArea 0.027511 ;
+        :hasSugarcaneProduction 3.02 ;
+        rdfs:label "Malawi"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Malaysia
+:Malaysia rdf:type owl:NamedIndividual ,
+                   :Sugarcane_Producer ;
+          :hasArableLandPerCapita 0.02 ;
+          :hasCO2EmissionPerCapita 7.56 ;
+          :hasEstimatedBagasse 0.01 ;
+          :hasGDPPerCapita 10576 ;
+          :hasGII 41.9 ;
+          :hasPRI 79 ;
+          :hasSugarcaneHarvestedArea 0.001678 ;
+          :hasSugarcaneProduction 0.03 ;
+          rdfs:label "Malaysia"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Mali
+:Mali rdf:type owl:NamedIndividual ,
+               :Sugarcane_Producer ;
+      :hasArableLandPerCapita 0.37 ;
+      :hasBagasseElectricityCapacity 40 ;
+      :hasCO2EmissionPerCapita 0.28 ;
+      :hasDeploymentIntensity 364.14 ;
+      :hasEstimatedBagasse 0.11 ;
+      :hasGDPPerCapita 745 ;
+      :hasGII 19.5 ;
+      :hasSugarcaneHarvestedArea 0.00913 ;
+      :hasSugarcaneProduction 0.37 ;
+      rdfs:label "Mali"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Mauritius
+:Mauritius rdf:type owl:NamedIndividual ,
+                    :Sugarcane_Producer ;
+           :hasArableLandPerCapita 0.06 ;
+           :hasBagasseElectricityCapacity 87 ;
+           :hasCO2EmissionPerCapita 3.24 ;
+           :hasDeploymentIntensity 91.93 ;
+           :hasEstimatedBagasse 0.95 ;
+           :hasGDPPerCapita 9704 ;
+           :hasGII 35.2 ;
+           :hasSugarcaneHarvestedArea 0.041897 ;
+           :hasSugarcaneProduction 3.15 ;
+           rdfs:label "Mauritius"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Mexico
+:Mexico rdf:type owl:NamedIndividual ,
+                 :Sugarcane_Producer ;
+        :hasArableLandPerCapita 0.17 ;
+        :hasBagasseElectricityCapacity 814 ;
+        :hasCO2EmissionPerCapita 3.09 ;
+        :hasDeploymentIntensity 45.73 ;
+        :hasEstimatedBagasse 17.8 ;
+        :hasGDPPerCapita 9525 ;
+        :hasGII 34.5 ;
+        :hasPRI 72 ;
+        :hasSugarcaneHarvestedArea 0.80928 ;
+        :hasSugarcaneProduction 59.33 ;
+        rdfs:label "Mexico"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Morocco
+:Morocco rdf:type owl:NamedIndividual ,
+                  :Sugarcane_Producer ;
+         :hasArableLandPerCapita 0.19 ;
+         :hasCO2EmissionPerCapita 1.97 ;
+         :hasEstimatedBagasse 0.18 ;
+         :hasGDPPerCapita 3291 ;
+         :hasGII 29.3 ;
+         :hasPRI 71 ;
+         :hasSugarcaneHarvestedArea 0.009468 ;
+         :hasSugarcaneProduction 0.62 ;
+         rdfs:label "Morocco"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Mozambique
+:Mozambique rdf:type owl:NamedIndividual ,
+                     :Sugarcane_Producer ;
+            :hasArableLandPerCapita 0.18 ;
+            :hasBagasseElectricityCapacity 75 ;
+            :hasCO2EmissionPerCapita 0.26 ;
+            :hasDeploymentIntensity 81.36 ;
+            :hasEstimatedBagasse 0.92 ;
+            :hasGDPPerCapita 573 ;
+            :hasGII 19.7 ;
+            :hasSugarcaneHarvestedArea 0.040906 ;
+            :hasSugarcaneProduction 3.07 ;
+            rdfs:label "Mozambique"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Myanmar
+:Myanmar rdf:type owl:NamedIndividual ,
+                  :Sugarcane_Producer ;
+         :hasArableLandPerCapita 0.21 ;
+         :hasBagasseElectricityCapacity 54 ;
+         :hasCO2EmissionPerCapita 0.72 ;
+         :hasDeploymentIntensity 16.89 ;
+         :hasEstimatedBagasse 3.2 ;
+         :hasGDPPerCapita 1317 ;
+         :hasGII 18.4 ;
+         :hasPRI 49 ;
+         :hasSugarcaneHarvestedArea 0.1637 ;
+         :hasSugarcaneProduction 10.66 ;
+         rdfs:label "Myanmar"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Nepal
+:Nepal rdf:type owl:NamedIndividual ,
+                :Sugarcane_Producer ;
+       :hasArableLandPerCapita 0.06 ;
+       :hasBagasseElectricityCapacity 6 ;
+       :hasCO2EmissionPerCapita 0.47 ;
+       :hasDeploymentIntensity 5.62 ;
+       :hasEstimatedBagasse 1.07 ;
+       :hasGDPPerCapita 1037 ;
+       :hasGII 22.5 ;
+       :hasSugarcaneHarvestedArea 0.064354 ;
+       :hasSugarcaneProduction 3.56 ;
+       rdfs:label "Nepal"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Nicaragua
+:Nicaragua rdf:type owl:NamedIndividual ,
+                    :Sugarcane_Producer ;
+           :hasArableLandPerCapita 0.23 ;
+           :hasBagasseElectricityCapacity 218 ;
+           :hasCO2EmissionPerCapita 0.77 ;
+           :hasDeploymentIntensity 100.59 ;
+           :hasEstimatedBagasse 2.17 ;
+           :hasGDPPerCapita 2053 ;
+           :hasPRI 63 ;
+           :hasSugarcaneHarvestedArea 0.071941 ;
+           :hasSugarcaneProduction 7.22 ;
+           rdfs:label "Nicaragua"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Niger
+:Niger rdf:type owl:NamedIndividual ,
+                :Sugarcane_Producer ;
+       :hasArableLandPerCapita 0.72 ;
+       :hasCO2EmissionPerCapita 0.1 ;
+       :hasEstimatedBagasse 0.08 ;
+       :hasGDPPerCapita 508 ;
+       :hasGII 17.8 ;
+       :hasSugarcaneHarvestedArea 0.012059 ;
+       :hasSugarcaneProduction 0.26 ;
+       rdfs:label "Niger"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Nigeria
+:Nigeria rdf:type owl:NamedIndividual ,
+                  :Sugarcane_Producer ;
+         :hasArableLandPerCapita 0.17 ;
+         :hasBagasseElectricityCapacity 5 ;
+         :hasCO2EmissionPerCapita 0.6 ;
+         :hasDeploymentIntensity 11.71 ;
+         :hasEstimatedBagasse 0.43 ;
+         :hasGDPPerCapita 2430 ;
+         :hasGII 20.1 ;
+         :hasPRI 57 ;
+         :hasSugarcaneHarvestedArea 0.088327 ;
+         :hasSugarcaneProduction 1.42 ;
+         rdfs:label "Nigeria"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Oman
+:Oman rdf:type owl:NamedIndividual ,
+               :Sugarcane_Producer ;
+      :hasArableLandPerCapita 0.02 ;
+      :hasCO2EmissionPerCapita 17.95 ;
+      :hasEstimatedBagasse 0 ;
+      :hasGDPPerCapita 18301 ;
+      :hasGII 29.3 ;
+      :hasPRI 76 ;
+      :hasSugarcaneHarvestedArea 0.000183 ;
+      :hasSugarcaneProduction 0 ;
+      rdfs:label "Oman"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Pakistan
+:Pakistan rdf:type owl:NamedIndividual ,
+                   :Sugarcane_Producer ;
+          :hasArableLandPerCapita 0.13 ;
+          :hasBagasseElectricityCapacity 372 ;
+          :hasCO2EmissionPerCapita 1.04 ;
+          :hasDeploymentIntensity 15.31 ;
+          :hasEstimatedBagasse 24.3 ;
+          :hasGDPPerCapita 1474 ;
+          :hasGII 24.4 ;
+          :hasPRI 53 ;
+          :hasSugarcaneHarvestedArea 1.26032 ;
+          :hasSugarcaneProduction 81.01 ;
+          rdfs:label "Pakistan"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Panama
+:Panama rdf:type owl:NamedIndividual ,
+                 :Sugarcane_Producer ;
+        :hasArableLandPerCapita 0.13 ;
+        :hasBagasseElectricityCapacity 60 ;
+        :hasCO2EmissionPerCapita 2.87 ;
+        :hasDeploymentIntensity 68.23 ;
+        :hasEstimatedBagasse 0.88 ;
+        :hasGDPPerCapita 13921 ;
+        :hasGII 28 ;
+        :hasPRI 75 ;
+        :hasSugarcaneHarvestedArea 0.036123 ;
+        :hasSugarcaneProduction 2.93 ;
+        rdfs:label "Panama"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Papua_New_Guinea
+:Papua_New_Guinea rdf:type owl:NamedIndividual ,
+                           :Sugarcane_Producer ;
+                  :hasArableLandPerCapita 0.03 ;
+                  :hasCO2EmissionPerCapita 0.74 ;
+                  :hasEstimatedBagasse 0.07 ;
+                  :hasGDPPerCapita 2413 ;
+                  :hasPRI 65 ;
+                  :hasSugarcaneHarvestedArea 0.01291 ;
+                  :hasSugarcaneProduction 0.24 ;
+                  rdfs:label "Papua New Guinea"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Paraguay
+:Paraguay rdf:type owl:NamedIndividual ,
+                   :Sugarcane_Producer ;
+          :hasArableLandPerCapita 0.66 ;
+          :hasBagasseElectricityCapacity 20 ;
+          :hasCO2EmissionPerCapita 1.24 ;
+          :hasDeploymentIntensity 10.82 ;
+          :hasEstimatedBagasse 1.85 ;
+          :hasGDPPerCapita 6265 ;
+          :hasGII 26.4 ;
+          :hasPRI 73 ;
+          :hasSugarcaneHarvestedArea 0.105 ;
+          :hasSugarcaneProduction 6.16 ;
+          rdfs:label "Paraguay"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Peru
+:Peru rdf:type owl:NamedIndividual ,
+               :Sugarcane_Producer ;
+      :hasArableLandPerCapita 0.13 ;
+      :hasBagasseElectricityCapacity 177 ;
+      :hasCO2EmissionPerCapita 1.64 ;
+      :hasDeploymentIntensity 57.08 ;
+      :hasEstimatedBagasse 3.1 ;
+      :hasGDPPerCapita 6437 ;
+      :hasGII 31.2 ;
+      :hasPRI 75 ;
+      :hasSugarcaneHarvestedArea 0.084941 ;
+      :hasSugarcaneProduction 10.34 ;
+      rdfs:label "Peru"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Philippines
+:Philippines rdf:type owl:NamedIndividual ,
+                      :Sugarcane_Producer ;
+             :hasArableLandPerCapita 0.05 ;
+             :hasBagasseElectricityCapacity 374 ;
+             :hasCO2EmissionPerCapita 1.33 ;
+             :hasDeploymentIntensity 54.2 ;
+             :hasEstimatedBagasse 6.9 ;
+             :hasGDPPerCapita 3328 ;
+             :hasGII 35.3 ;
+             :hasPRI 69 ;
+             :hasSugarcaneHarvestedArea 0.420229 ;
+             :hasSugarcaneProduction 23 ;
+             rdfs:label "Philippines"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Portugal
+:Portugal rdf:type owl:NamedIndividual ,
+                   :Sugarcane_Producer ;
+          :hasArableLandPerCapita 0.09 ;
+          :hasBagasseElectricityCapacity 2 ;
+          :hasCO2EmissionPerCapita 3.8 ;
+          :hasDeploymentIntensity 1202.5 ;
+          :hasEstimatedBagasse 0 ;
+          :hasGDPPerCapita 20831 ;
+          :hasGII 44.2 ;
+          :hasPRI 74 ;
+          :hasSugarcaneProduction 0.01 ;
+          rdfs:label "Portugal"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Rwanda
+:Rwanda rdf:type owl:NamedIndividual ,
+                 :Sugarcane_Producer ;
+        :hasArableLandPerCapita 0.09 ;
+        :hasBagasseElectricityCapacity 1 ;
+        :hasCO2EmissionPerCapita 0.09 ;
+        :hasDeploymentIntensity 28.62 ;
+        :hasEstimatedBagasse 0.03 ;
+        :hasGDPPerCapita 890 ;
+        :hasGII 23.9 ;
+        :hasSugarcaneHarvestedArea 0.007614 ;
+        :hasSugarcaneProduction 0.12 ;
+        rdfs:label "Rwanda"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Saint_Kitts_and_Nevis
+:Saint_Kitts_and_Nevis rdf:type owl:NamedIndividual ,
+                                :Sugarcane_Producer ;
+                       :hasArableLandPerCapita 0.11 ;
+                       :hasCO2EmissionPerCapita 4.94 ;
+                       :hasEstimatedBagasse 0.03 ;
+                       :hasGDPPerCapita 18796 ;
+                       :hasSugarcaneProduction 0.1 ;
+                       rdfs:label "Saint Kitts and Nevis"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Saint_Lucia
+:Saint_Lucia rdf:type owl:NamedIndividual ,
+                      :Sugarcane_Producer ;
+             :hasArableLandPerCapita 0.01 ;
+             :hasCO2EmissionPerCapita 3.94 ;
+             :hasEstimatedBagasse 0 ;
+             :hasGDPPerCapita 9362 ;
+             :hasSugarcaneProduction 0.01 ;
+             rdfs:label "Saint Lucia"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Samoa
+:Samoa rdf:type owl:NamedIndividual ,
+                :Sugarcane_Producer ;
+       :hasCO2EmissionPerCapita 1.78 ;
+       :hasEstimatedBagasse 0 ;
+       :hasGDPPerCapita 3856 ;
+       :hasSugarcaneHarvestedArea 1e-06 ;
+       :hasSugarcaneProduction 0 ;
+       rdfs:label "Samoa"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Senegal
+:Senegal rdf:type owl:NamedIndividual ,
+                  :Sugarcane_Producer ;
+         :hasArableLandPerCapita 0.22 ;
+         :hasBagasseElectricityCapacity 49 ;
+         :hasCO2EmissionPerCapita 0.68 ;
+         :hasDeploymentIntensity 184.31 ;
+         :hasEstimatedBagasse 0.27 ;
+         :hasGDPPerCapita 1437 ;
+         :hasGII 23.3 ;
+         :hasSugarcaneHarvestedArea 0.011023 ;
+         :hasSugarcaneProduction 0.89 ;
+         rdfs:label "Senegal"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Sierra_Leone
+:Sierra_Leone rdf:type owl:NamedIndividual ,
+                       :Sugarcane_Producer ;
+              :hasArableLandPerCapita 0.2 ;
+              :hasBagasseElectricityCapacity 32 ;
+              :hasCO2EmissionPerCapita 0.12 ;
+              :hasDeploymentIntensity 1359.99 ;
+              :hasEstimatedBagasse 0.02 ;
+              :hasGDPPerCapita 615 ;
+              :hasSugarcaneHarvestedArea 0.001194 ;
+              :hasSugarcaneProduction 0.08 ;
+              rdfs:label "Sierra Leone"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Singapore
+:Singapore rdf:type owl:NamedIndividual ,
+                    :Sugarcane_Producer ;
+           :hasCO2EmissionPerCapita 9.71 ;
+           :hasEstimatedBagasse 0 ;
+           :hasGDPPerCapita 66176 ;
+           :hasGII 57.8 ;
+           :hasPRI 90 ;
+           :hasSugarcaneProduction 0 ;
+           rdfs:label "Singapore"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Somalia
+:Somalia rdf:type owl:NamedIndividual ,
+                  :Sugarcane_Producer ;
+         :hasArableLandPerCapita 0.06 ;
+         :hasCO2EmissionPerCapita 0.05 ;
+         :hasEstimatedBagasse 0.06 ;
+         :hasGDPPerCapita 428 ;
+         :hasSugarcaneHarvestedArea 0.006877 ;
+         :hasSugarcaneProduction 0.21 ;
+         rdfs:label "Somalia"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#South_Africa
+:South_Africa rdf:type owl:NamedIndividual ,
+                       :Sugarcane_Producer ;
+              :hasArableLandPerCapita 0.2 ;
+              :hasBagasseElectricityCapacity 242 ;
+              :hasCO2EmissionPerCapita 7.34 ;
+              :hasDeploymentIntensity 41.79 ;
+              :hasEstimatedBagasse 5.79 ;
+              :hasGDPPerCapita 5948 ;
+              :hasGII 32.7 ;
+              :hasPRI 66 ;
+              :hasSugarcaneHarvestedArea 0.24103 ;
+              :hasSugarcaneProduction 19.3 ;
+              rdfs:label "South Africa"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Spain
+:Spain rdf:type owl:NamedIndividual ,
+                :Sugarcane_Producer ;
+       :hasArableLandPerCapita 0.24 ;
+       :hasCO2EmissionPerCapita 4.99 ;
+       :hasEstimatedBagasse 0 ;
+       :hasGDPPerCapita 26126 ;
+       :hasGII 45.4 ;
+       :hasPRI 77 ;
+       :hasSugarcaneProduction 0 ;
+       rdfs:label "Spain"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Sri_Lanka
+:Sri_Lanka rdf:type owl:NamedIndividual ,
+                    :Sugarcane_Producer ;
+           :hasArableLandPerCapita 0.06 ;
+           :hasCO2EmissionPerCapita 1.13 ;
+           :hasEstimatedBagasse 0.19 ;
+           :hasGDPPerCapita 4376 ;
+           :hasGII 25.1 ;
+           :hasPRI 63 ;
+           :hasSugarcaneHarvestedArea 0.014361 ;
+           :hasSugarcaneProduction 0.64 ;
+           rdfs:label "Sri Lanka"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#St_Vincent_and_the_Grenadines
+:St_Vincent_and_the_Grenadines rdf:type owl:NamedIndividual ,
+                                        :Sugarcane_Producer ;
+                               :hasArableLandPerCapita 0.02 ;
+                               :hasCO2EmissionPerCapita 2.1 ;
+                               :hasEstimatedBagasse 0.01 ;
+                               :hasGDPPerCapita 7927 ;
+                               :hasSugarcaneProduction 0.02 ;
+                               rdfs:label "St Vincent and the Grenadines"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Sudan
+:Sudan rdf:type owl:NamedIndividual ,
+                :Sugarcane_Producer ;
+       :hasArableLandPerCapita 0.44 ;
+       :hasBagasseElectricityCapacity 199 ;
+       :hasCO2EmissionPerCapita 0.36 ;
+       :hasDeploymentIntensity 112.38 ;
+       :hasEstimatedBagasse 1.77 ;
+       :hasGDPPerCapita 1746 ;
+       :hasPRI 53 ;
+       :hasSugarcaneHarvestedArea 0.059118 ;
+       :hasSugarcaneProduction 5.9 ;
+       rdfs:label "Sudan"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Suriname
+:Suriname rdf:type owl:NamedIndividual ,
+                   :Sugarcane_Producer ;
+          :hasArableLandPerCapita 0.09 ;
+          :hasCO2EmissionPerCapita 4.64 ;
+          :hasEstimatedBagasse 0.04 ;
+          :hasGDPPerCapita 7008 ;
+          :hasPRI 70 ;
+          :hasSugarcaneHarvestedArea 0.002228 ;
+          :hasSugarcaneProduction 0.13 ;
+          rdfs:label "Suriname"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Swaziland_Eswatini
+:Swaziland_Eswatini rdf:type owl:NamedIndividual ,
+                             :Sugarcane_Producer ;
+                    :hasArableLandPerCapita 0.15 ;
+                    :hasBagasseElectricityCapacity 106 ;
+                    :hasCO2EmissionPerCapita 1.03 ;
+                    :hasDeploymentIntensity 63.14 ;
+                    :hasEstimatedBagasse 1.68 ;
+                    :hasGDPPerCapita 3924 ;
+                    :hasSugarcaneHarvestedArea 0.056936 ;
+                    :hasSugarcaneProduction 5.6 ;
+                    rdfs:label "Swaziland (Eswatini)"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Syria
+:Syria rdf:type owl:NamedIndividual ,
+                :Sugarcane_Producer ;
+       :hasArableLandPerCapita 0.21 ;
+       :hasCO2EmissionPerCapita 1.32 ;
+       :hasEstimatedBagasse 0 ;
+       :hasGDPPerCapita 727 ;
+       :hasPRI 45 ;
+       :hasSugarcaneProduction 0 ;
+       rdfs:label "Syria"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Taiwan
+:Taiwan rdf:type owl:NamedIndividual ,
+                 :Sugarcane_Producer ;
+        :hasCO2EmissionPerCapita 12.07 ;
+        :hasPRI 86 ;
+        :hasSugarcaneHarvestedArea 0.008499 ;
+        rdfs:label "Taiwan"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Tanzania
+:Tanzania rdf:type owl:NamedIndividual ,
+                   :Sugarcane_Producer ;
+          :hasArableLandPerCapita 0.21 ;
+          :hasBagasseElectricityCapacity 46 ;
+          :hasCO2EmissionPerCapita 0.21 ;
+          :hasDeploymentIntensity 50.24 ;
+          :hasEstimatedBagasse 0.92 ;
+          :hasGDPPerCapita 1040 ;
+          :hasGII 25.6 ;
+          :hasSugarcaneHarvestedArea 0.048851 ;
+          :hasSugarcaneProduction 3.05 ;
+          rdfs:label "Tanzania"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Thailand
+:Thailand rdf:type owl:NamedIndividual ,
+                   :Sugarcane_Producer ;
+          :hasArableLandPerCapita 0.23 ;
+          :hasBagasseElectricityCapacity 1875 ;
+          :hasCO2EmissionPerCapita 3.88 ;
+          :hasDeploymentIntensity 59.89 ;
+          :hasEstimatedBagasse 31.31 ;
+          :hasGDPPerCapita 6124 ;
+          :hasGII 37.2 ;
+          :hasPRI 75 ;
+          :hasSugarcaneHarvestedArea 1.48528 ;
+          :hasSugarcaneProduction 104.36 ;
+          rdfs:label "Thailand"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#The_Bahamas
+:The_Bahamas rdf:type owl:NamedIndividual ,
+                      :Sugarcane_Producer ;
+             :hasArableLandPerCapita 0.02 ;
+             :hasCO2EmissionPerCapita 9.86 ;
+             :hasEstimatedBagasse 0.02 ;
+             :hasGDPPerCapita 26706 ;
+             :hasSugarcaneHarvestedArea 0.002543 ;
+             :hasSugarcaneProduction 0.06 ;
+             rdfs:label "The Bahamas"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Trinidad_and_Tobago
+:Trinidad_and_Tobago rdf:type owl:NamedIndividual ,
+                              :Sugarcane_Producer ;
+                     :hasArableLandPerCapita 0.02 ;
+                     :hasCO2EmissionPerCapita 21.01 ;
+                     :hasEstimatedBagasse 0.24 ;
+                     :hasGDPPerCapita 14180 ;
+                     :hasGII 25.1 ;
+                     :hasPRI 76 ;
+                     :hasSugarcaneProduction 0.81 ;
+                     rdfs:label "Trinidad and Tobago"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#USA
+:USA rdf:type owl:NamedIndividual ,
+              :Sugarcane_Producer ;
+     :hasArableLandPerCapita 0.46 ;
+     :hasBagasseElectricityCapacity 170 ;
+     :hasCO2EmissionPerCapita 14.24 ;
+     :hasDeploymentIntensity 18.08 ;
+     :hasEstimatedBagasse 9.4 ;
+     :hasGDPPerCapita 61856 ;
+     :hasGII 61.3 ;
+     :hasPRI 83 ;
+     :hasSugarcaneHarvestedArea 0.3784 ;
+     :hasSugarcaneProduction 31.34 ;
+     rdfs:label "USA"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Uganda
+:Uganda rdf:type owl:NamedIndividual ,
+                 :Sugarcane_Producer ;
+        :hasArableLandPerCapita 0.15 ;
+        :hasBagasseElectricityCapacity 112 ;
+        :hasCO2EmissionPerCapita 0.14 ;
+        :hasDeploymentIntensity 93.88 ;
+        :hasEstimatedBagasse 1.19 ;
+        :hasGDPPerCapita 921 ;
+        :hasGII 20 ;
+        :hasSugarcaneHarvestedArea 0.085 ;
+        :hasSugarcaneProduction 3.98 ;
+        rdfs:label "Uganda"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Uruguay
+:Uruguay rdf:type owl:NamedIndividual ,
+                  :Sugarcane_Producer ;
+         :hasArableLandPerCapita 0.6 ;
+         :hasBagasseElectricityCapacity 13 ;
+         :hasCO2EmissionPerCapita 1.94 ;
+         :hasDeploymentIntensity 123.62 ;
+         :hasEstimatedBagasse 0.11 ;
+         :hasGDPPerCapita 15875 ;
+         :hasGII 32.2 ;
+         :hasPRI 76 ;
+         :hasSugarcaneHarvestedArea 0.0067 ;
+         :hasSugarcaneProduction 0.35 ;
+         rdfs:label "Uruguay"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Venezuela
+:Venezuela rdf:type owl:NamedIndividual ,
+                    :Sugarcane_Producer ;
+           :hasArableLandPerCapita 0.09 ;
+           :hasBagasseElectricityCapacity 10 ;
+           :hasCO2EmissionPerCapita 3.12 ;
+           :hasDeploymentIntensity 8 ;
+           :hasEstimatedBagasse 1.25 ;
+           :hasGDPPerCapita 3474 ;
+           :hasPRI 37 ;
+           :hasSugarcaneHarvestedArea 0.067245 ;
+           :hasSugarcaneProduction 4.17 ;
+           rdfs:label "Venezuela"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Vietnam
+:Vietnam rdf:type owl:NamedIndividual ,
+                  :Sugarcane_Producer ;
+         :hasArableLandPerCapita 0.07 ;
+         :hasBagasseElectricityCapacity 344 ;
+         :hasCO2EmissionPerCapita 3.24 ;
+         :hasDeploymentIntensity 63.9 ;
+         :hasEstimatedBagasse 5.38 ;
+         :hasGDPPerCapita 3409 ;
+         :hasGII 37 ;
+         :hasPRI 71 ;
+         :hasSugarcaneHarvestedArea 0.1511 ;
+         :hasSugarcaneProduction 17.95 ;
+         rdfs:label "Vietnam"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Yemen
+:Yemen rdf:type owl:NamedIndividual ,
+                :Sugarcane_Producer ;
+       :hasArableLandPerCapita 0.03 ;
+       :hasCO2EmissionPerCapita 0.39 ;
+       :hasEstimatedBagasse 0 ;
+       :hasGDPPerCapita 1195 ;
+       :hasGII 15.4 ;
+       :hasSugarcaneProduction 0 ;
+       rdfs:label "Yemen"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Zambia
+:Zambia rdf:type owl:NamedIndividual ,
+                 :Sugarcane_Producer ;
+        :hasArableLandPerCapita 0.19 ;
+        :hasBagasseElectricityCapacity 43 ;
+        :hasCO2EmissionPerCapita 0.36 ;
+        :hasDeploymentIntensity 32.13 ;
+        :hasEstimatedBagasse 1.34 ;
+        :hasGDPPerCapita 1258 ;
+        :hasGII 19.8 ;
+        :hasPRI 61 ;
+        :hasSugarcaneHarvestedArea 0.040944 ;
+        :hasSugarcaneProduction 4.46 ;
+        rdfs:label "Zambia"@en .
+
+
+###  https://w3id.org/owaimo/global-bagasse-electricity-deployment-potential#Zimbabwe
+:Zimbabwe rdf:type owl:NamedIndividual ,
+                   :Sugarcane_Producer ;
+          :hasArableLandPerCapita 0.25 ;
+          :hasBagasseElectricityCapacity 100 ;
+          :hasCO2EmissionPerCapita 0.68 ;
+          :hasDeploymentIntensity 100.86 ;
+          :hasEstimatedBagasse 0.99 ;
+          :hasGDPPerCapita 1289 ;
+          :hasGII 21.9 ;
+          :hasPRI 38 ;
+          :hasSugarcaneHarvestedArea 0.074513 ;
+          :hasSugarcaneProduction 3.31 ;
+          rdfs:label "Zimbabwe"@en .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
